@@ -420,7 +420,7 @@ body::before {
 }
 
 .hero-stats {
-    display: flex;
+    display: none;
     gap: 36px;
     margin-bottom: 40px;
     transform: translateY(30px);
