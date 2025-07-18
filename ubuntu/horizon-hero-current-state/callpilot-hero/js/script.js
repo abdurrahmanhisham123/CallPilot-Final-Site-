@@ -891,7 +891,7 @@ function initTableRowInteractions() {
  * Initializes enhanced 3D interface interactions.
  */
 function initInterface3D() {
-    const interfaces = document.querySelectorAll(".voice-interface, .personality-selector, .analytics-dashboard");
+    const interfaces = document.querySelectorAll(".personality-selector, .analytics-dashboard");
     interfaces.forEach(interfaceEl => {
         interfaceEl.addEventListener("mouseenter", () => {
             interfaceEl.style.transform = "perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.05)";
@@ -899,9 +899,7 @@ function initInterface3D() {
         });
         
         interfaceEl.addEventListener("mouseleave", () => {
-            if (interfaceEl.classList.contains("voice-interface")) {
-                interfaceEl.style.transform = "perspective(1000px) rotateY(-5deg) rotateX(5deg) scale(1)";
-            } else if (interfaceEl.classList.contains("personality-selector")) {
+            if (interfaceEl.classList.contains("personality-selector")) {
                 interfaceEl.style.transform = "perspective(1000px) rotateY(5deg) rotateX(5deg) scale(1)";
             } else if (interfaceEl.classList.contains("analytics-dashboard")) {
                 interfaceEl.style.transform = "perspective(1000px) rotateY(-5deg) rotateX(5deg) scale(1)";
@@ -1162,7 +1160,6 @@ function initSmoothScrollAnimations() {
         
         // Interactive elements
         ".dashboard-preview",
-        ".voice-interface",
         ".analytics-dashboard",
         ".personality-selector",
         
@@ -1354,7 +1351,7 @@ function initSmoothScrollAnimations() {
  * Initializes parallax effects for background elements.
  */
 function initParallaxEffects() {
-    const parallaxElements = document.querySelectorAll(".dashboard-preview, .voice-interface, .analytics-dashboard");
+    const parallaxElements = document.querySelectorAll(".dashboard-preview, .analytics-dashboard");
     
     let ticking = false;
     function updateParallax() {
