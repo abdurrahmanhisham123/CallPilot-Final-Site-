@@ -1,0 +1,318 @@
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* General Layout & Hero Section */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 992px;
+    }
+    .hero-content {
+        gap: 40px;
+    }
+    .hero-title {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 768px;
+    }
+    .header-content {
+        padding: 12px 0;
+    }
+    .nav {
+        display: none;
+    }
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 60px;
+    }
+    .hero-text {
+        max-width: 100%;
+    }
+    .hero-visual {
+        margin: 0 auto;
+        max-width: 500px;
+    }
+    .hero-title {
+        font-size: 42px;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .trust-indicators {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+    .user-actions .sign-in {
+        display: none;
+    }
+    .hero {
+        padding: 80px 0 60px;
+    }
+    .hero-title {
+        font-size: 36px;
+    }
+    .hero-description {
+        font-size: 15px;
+    }
+    .floating-elements {
+        display: none;
+    }
+    .ai-interface {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        font-size: 14px;
+    }
+    .header {
+        padding: 8px 0;
+    }
+    .logo-text {
+        font-size: 18px;
+    }
+    .contact-btn {
+        padding: 9px 18px;
+        font-size: 13px;
+    }
+    .hero-badge {
+        padding: 10px 16px;
+        margin-bottom: 20px;
+    }
+    .badge-text {
+        font-size: 12px;
+    }
+    .hero-title {
+        font-size: 32px;
+    }
+    .hero-description {
+        font-size: 14px;
+    }
+    .cta-button {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+    }
+    .trust-indicators {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .ai-interface {
+        transform: scale(0.8);
+    }
+}
+
+/* Section-specific Responsiveness */
+@media (max-width: 992px) {
+    .exploration-content,
+    .brilliance-content,
+    .power-content,
+    .victory-content,
+    .enhanced-content,
+    .discovery-content,
+    .trusted-content,
+    .capabilities-content,
+    .faq-content,
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .exploration-visual,
+    .brilliance-visual,
+    .power-visual {
+        margin: 40px auto 0;
+    }
+
+    .call-flow,
+    .victory-showcase,
+    .voice-tech-content {
+        flex-direction: column;
+    }
+
+    .plans-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .voice-carousel {
+        padding: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .exploration-title,
+    .brilliance-title,
+    .power-title,
+    .call-handling-title,
+    .voice-tech-title,
+    .victory-title,
+    .enhanced-title,
+    .discovery-title,
+    .trusted-title,
+    .capabilities-title,
+    .faq-title {
+        font-size: 32px;
+    }
+
+    .exploration-description,
+    .brilliance-description,
+    .power-description {
+        font-size: 15px;
+    }
+
+    .main-voice-card {
+        padding: 20px;
+    }
+
+    .showcase-left,
+    .showcase-right {
+        width: 100%;
+    }
+
+    .company-logos {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .exploration-stats,
+    .brilliance-fact,
+    .power-fact {
+        text-align: left;
+    }
+
+    .personality-grid,
+    .core-technologies,
+    .capabilities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-dashboard {
+        transform: scale(0.9);
+    }
+
+    .call-step {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .voice-selection-panel {
+        padding: 15px;
+    }
+
+    .victory-badge {
+        margin: 0 auto 20px;
+    }
+
+    .footer-brand,
+    .footer-links,
+    .footer-cta {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Card-specific Overrides */
+@media (max-width: 992px) {
+    .floating-card {
+        display: none !important;
+    }
+    .dashboard-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .upload-card, .files-card, .plan-card, .solution-card, .voice-card, .technology-card, .capability-card, .faq-item, .personality-card {
+        padding: 20px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .card-title, .plan-title, .solution-title, .voice-name, .tech-title, .capability-title {
+        font-size: 1.1rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .dashboard-stats {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    .files-list .file-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 5px !important;
+    }
+
+    .voice-carousel {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    .voice-line {
+        flex-direction: column !important;
+        gap: 20px !important;
+        animation: none !important;
+    }
+}
+/* Hero Section Cards Responsiveness */
+@media (max-width: 1200px) {
+    .hero-visual {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-visual {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-visual {
+        transform: scale(1);
+        max-width: 100%;
+    }
+    .floating-card {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        margin-bottom: 15px;
+        animation: none;
+        transform: scale(1) !important;
+    }
+    .floating-elements {
+        position: relative;
+        display: block !important;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .ai-interface {
+        transform: scale(1);
+    }
+}
