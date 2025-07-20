@@ -703,160 +703,193 @@
             </div>
             
             <div class="voice-tech-content">
-                <!-- Main Voice Card -->
-                <div class="main-voice-card">
-                    <div class="voice-card-header">
-                        <div class="voice-info">
-                            <h3 class="voice-name">Sarah</h3>
-                            <p class="voice-type">Professional Female</p>
-                            <p class="voice-accent">American Accent</p>
+                <!-- Voice Customization Card -->
+                <div class="voice-studio-card">
+                    <div class="studio-header">
+                        <div class="studio-title">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" fill="currentColor"/>
+                            </svg>
+                            <h3>Voice Tuning</h3>
                         </div>
-                        <button class="main-play-btn" id="mainPlayBtn">
-                            <div class="play-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+                        <div class="tuning-preset">
+                            <span>Business Mode</span>
+                        </div>
+                    </div>
+
+                    <div class="tone-controller">
+                        <div class="controller-header">
+                            <span class="controller-label">Voice Personality</span>
+                            <div class="tone-value">Balanced</div>
+                        </div>
+                        
+                        <div class="tone-slider-container">
+                            <div class="tone-labels">
+                                <span class="label-fun">Fun</span>
+                                <span class="label-professional">Professional</span>
+                            </div>
+                            <div class="slider-track">
+                                <div class="slider-fill"></div>
+                                <div class="slider-thumb">
+                                    <div class="thumb-inner"></div>
+                                </div>
+                            </div>
+                            <div class="slider-markers">
+                                <div class="marker"></div>
+                                <div class="marker"></div>
+                                <div class="marker active"></div>
+                                <div class="marker"></div>
+                                <div class="marker"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="voice-characteristics">
+                        <div class="characteristic">
+                            <div class="char-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
                                 </svg>
                             </div>
+                            <div class="char-info">
+                                <span class="char-label">Warmth</span>
+                                <div class="char-level">
+                                    <div class="level-fill" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="characteristic">
+                            <div class="char-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                                    <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="char-info">
+                                <span class="char-label">Clarity</span>
+                                <div class="char-level">
+                                    <div class="level-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="characteristic">
+                            <div class="char-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7 7-7z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="char-info">
+                                <span class="char-label">Empathy</span>
+                                <div class="char-level">
+                                    <div class="level-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="preview-controls">
+                        <button class="preview-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M8 5v14l11-7z" fill="currentColor"/>
+                            </svg>
+                            <span>Preview Voice</span>
+                        </button>
+                        <button class="save-btn">
+                            <span>Save Settings</span>
                         </button>
                     </div>
-                    
-                    <div class="waveform-display">
-                        <div class="waveform-bars" id="waveformBars">
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="voice-sample">
-                        <p class="sample-text">"Hi! I'm Sarah from CallPilot. How can I help you today?"</p>
-                        <p class="sample-description">Warm, professional tone perfect for customer service and sales calls</p>
-                    </div>
-                    
-                    <div class="voice-characteristics">
-                        <h4>Key Characteristics:</h4>
-                        <div class="characteristics-tags">
-                            <span class="char-tag">Empathetic</span>
-                            <span class="char-tag">Clear articulation</span>
-                            <span class="char-tag">Confident delivery</span>
-                        </div>
-                    </div>
-                    
-                    <div class="voice-customization-panel">
-                        <h4>Voice Customization</h4>
-                        <div class="speed-control">
-                            <label>Speaking Speed</label>
-                            <div class="speed-slider-container">
-                                <input type="range" class="speed-slider" min="0" max="100" value="50" id="speedSlider">
-                                <div class="speed-labels">
-                                    <span>Slow</span>
-                                    <span>Fast</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tone-control">
-                            <label>Tone</label>
-                            <div class="tone-buttons">
-                                <button class="tone-btn active" data-tone="professional">Professional</button>
-                                <button class="tone-btn" data-tone="friendly">Friendly</button>
-                                <button class="tone-btn" data-tone="casual">Casual</button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                
-                <!-- Voice Selection Panel -->
-                <div class="voice-selection-panel">
-                    <h3 class="selection-title">Choose Your Voice</h3>
-                    
-                    <div class="voice-options-list">
-                        <div class="voice-option active" data-voice="sarah">
-                            <div class="option-content">
-                                <div class="option-header">
-                                    <span class="option-name">Sarah</span>
-                                    <span class="option-accent">American</span>
-                                </div>
-                                <p class="option-desc">Warm, professional tone perfect for customer service and sales calls</p>
-                            </div>
-                            <button class="option-play-btn">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                    <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
-                                </svg>
-                            </button>
+
+                <!-- Voice Selection Card -->
+                <div class="voice-studio-card">
+                    <div class="studio-header">
+                        <div class="studio-title">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z" fill="currentColor"/>
+                            </svg>
+                            <h3>Voice Selection</h3>
                         </div>
-                        
-                        <div class="voice-option" data-voice="marcus">
-                            <div class="option-content">
-                                <div class="option-header">
-                                    <span class="option-name">Marcus</span>
-                                    <span class="option-accent">British</span>
-                                </div>
-                                <p class="option-desc">Authoritative yet friendly, ideal for technical support and consultations</p>
-                            </div>
-                            <button class="option-play-btn">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                    <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
-                                </svg>
-                            </button>
-                        </div>
-                        
-                        <div class="voice-option" data-voice="elena">
-                            <div class="option-content">
-                                <div class="option-header">
-                                    <span class="option-name">Elena</span>
-                                    <span class="option-accent">Spanish/English</span>
-                                </div>
-                                <p class="option-desc">Bilingual capabilities with natural code-switching for diverse markets</p>
-                            </div>
-                            <button class="option-play-btn">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                    <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
-                                </svg>
-                            </button>
-                        </div>
-                        
-                        <div class="voice-option" data-voice="alex">
-                            <div class="option-content">
-                                <div class="option-header">
-                                    <span class="option-name">Alex</span>
-                                    <span class="option-accent">Global English</span>
-                                </div>
-                                <p class="option-desc">Gender-neutral voice designed for maximum accessibility and inclusivity</p>
-                            </div>
-                            <button class="option-play-btn">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                    <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
-                                </svg>
-                            </button>
+                        <div class="live-indicator">
+                            <div class="pulse-dot"></div>
+                            <span>Live Preview</span>
                         </div>
                     </div>
-                    
-                    <div class="advanced-features-panel">
-                        <h4>Advanced Voice Features</h4>
-                        <ul class="features-list">
-                            <li>Real-time voice cloning from 30-second samples</li>
-                            <li>Emotional tone adaptation based on conversation context</li>
-                            <li>50+ languages with native pronunciation</li>
-                            <li>Custom voice training for brand consistency</li>
-                            <li>Background noise cancellation and enhancement</li>
-                        </ul>
+
+                    <div class="voice-gallery">
+                        <div class="voice-option active" data-voice="sarah">
+                            <div class="voice-avatar">
+                                <div class="avatar-ring"></div>
+                                <span class="avatar-text">S</span>
+                            </div>
+                            <div class="voice-info">
+                                <span class="voice-name">Sarah</span>
+                                <span class="voice-accent">American • Warm</span>
+                            </div>
+                            <div class="play-button">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 5v14l11-7z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="voice-option" data-voice="marcus">
+                            <div class="voice-avatar">
+                                <div class="avatar-ring"></div>
+                                <span class="avatar-text">M</span>
+                            </div>
+                            <div class="voice-info">
+                                <span class="voice-name">Marcus</span>
+                                <span class="voice-accent">British • Professional</span>
+                            </div>
+                            <div class="play-button">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 5v14l11-7z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="voice-option" data-voice="elena">
+                            <div class="voice-avatar">
+                                <div class="avatar-ring"></div>
+                                <span class="avatar-text">E</span>
+                            </div>
+                            <div class="voice-info">
+                                <span class="voice-name">Elena</span>
+                                <span class="voice-accent">Spanish • Energetic</span>
+                            </div>
+                            <div class="play-button">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 5v14l11-7z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="current-voice-preview">
+                        <div class="preview-header">
+                            <span class="preview-label">Currently Selected: Sarah</span>
+                            <div class="recording-status">
+                                <div class="rec-dot"></div>
+                                <span>Ready</span>
+                            </div>
+                        </div>
+                        
+                        <div class="audio-waveform">
+                            <div class="wave-bar" style="height: 20%"></div>
+                            <div class="wave-bar" style="height: 60%"></div>
+                            <div class="wave-bar" style="height: 90%"></div>
+                            <div class="wave-bar" style="height: 40%"></div>
+                            <div class="wave-bar" style="height: 85%"></div>
+                            <div class="wave-bar" style="height: 30%"></div>
+                            <div class="wave-bar" style="height: 75%"></div>
+                            <div class="wave-bar" style="height: 95%"></div>
+                            <div class="wave-bar" style="height: 45%"></div>
+                            <div class="wave-bar" style="height: 70%"></div>
+                            <div class="wave-bar" style="height: 35%"></div>
+                            <div class="wave-bar" style="height: 80%"></div>
+                        </div>
                     </div>
                 </div>
             </div>
