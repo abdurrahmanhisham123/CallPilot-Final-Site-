@@ -3463,8 +3463,9 @@ h2,
     right: 0;
     bottom: 0;
     background:
-        radial-gradient(ellipse at top right, rgba(255, 191, 0, 0.08) 0%, transparent 50%),
-        radial-gradient(ellipse at bottom left, rgba(255, 193, 7, 0.06) 0%, transparent 50%);
+        radial-gradient(ellipse at top right, rgba(255, 193, 7, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at bottom left, rgba(255, 193, 7, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at center, rgba(255, 193, 7, 0.08) 0%, transparent 40%);
     pointer-events: none;
 }
 
@@ -3645,12 +3646,27 @@ h2,
     flex: 1;
 }
 
-.unlock-section h4 {
-    font-size: 16px;
-    font-weight: 600;
+.explore-features-btn {
+    width: 100%;
+    padding: 12px 24px;
+    background: rgba(255, 193, 7, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    border-radius: 12px;
     color: rgba(255, 193, 7, 0.9);
-    margin-bottom: 16px;
-    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin-top: 16px;
+}
+
+.explore-features-btn:hover {
+    background: rgba(255, 193, 7, 0.2);
+    border-color: rgba(255, 193, 7, 0.5);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.2);
 }
 
 .unlock-list {
@@ -7968,8 +7984,9 @@ h2,
     right: 0;
     bottom: 0;
     background:
-        radial-gradient(ellipse at top right, rgba(255, 191, 0, 0.08) 0%, transparent 50%),
-        radial-gradient(ellipse at bottom left, rgba(255, 193, 7, 0.06) 0%, transparent 50%);
+        radial-gradient(ellipse at top right, rgba(255, 193, 7, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at bottom left, rgba(255, 193, 7, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at center, rgba(255, 193, 7, 0.08) 0%, transparent 40%);
     pointer-events: none;
 }
 
