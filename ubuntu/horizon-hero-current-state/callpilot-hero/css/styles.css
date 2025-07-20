@@ -2256,7 +2256,7 @@ body {
 /* AI Exploration Section */
 .ai-exploration {
     padding: 120px 0;
-    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+    background: linear-gradient(135deg, #000000 0%, #100a1a 30%, #1a0f2a 50%, #100a1a 70%, #000000 100%);
     position: relative;
 }
 
@@ -2290,6 +2290,169 @@ body {
     letter-spacing: 1px;
     margin-bottom: 16px;
     text-shadow: 0 0 10px rgba(255, 127, 80, 0.4);
+}
+
+/* Keep AI Discovery Frontiers purple */
+.ai-exploration .section-label {
+    color: rgba(138, 43, 226, 0.8);
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+}
+
+/* Apple-style buttons for AI exploration section */
+.ai-exploration .cta-button.primary {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 16px 32px;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-exploration .cta-button.primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+}
+
+.ai-exploration .cta-button.primary:hover {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.1));
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 12px 48px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.ai-exploration .cta-button.secondary {
+    background: rgba(138, 43, 226, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    border-radius: 16px;
+    padding: 16px 32px;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(138, 43, 226, 0.9);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    text-decoration: none;
+    position: relative;
+}
+
+.ai-exploration .cta-button.secondary:hover {
+    background: rgba(138, 43, 226, 0.15);
+    border-color: rgba(138, 43, 226, 0.5);
+    color: rgba(138, 43, 226, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(138, 43, 226, 0.2);
+}
+
+/* Proper spacing and alignment for AI exploration buttons */
+.ai-exploration .hero-buttons {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    display: flex;
+    gap: 24px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .ai-exploration .hero-buttons {
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 32px;
+        margin-bottom: 48px;
+    }
+    
+    .ai-exploration .cta-button.primary,
+    .ai-exploration .cta-button.secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 24px;
+    }
+}
+
+/* Apple-style buttons for hero section */
+.hero .cta-button.primary {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 16px 32px;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .cta-button.primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+}
+
+.hero .cta-button.primary:hover {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.1));
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 12px 48px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.hero .cta-button.secondary {
+    background: rgba(138, 43, 226, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    border-radius: 16px;
+    padding: 16px 32px;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(138, 43, 226, 0.9);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+}
+
+.hero .cta-button.secondary:hover {
+    background: rgba(138, 43, 226, 0.15);
+    border-color: rgba(138, 43, 226, 0.5);
+    color: rgba(138, 43, 226, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(138, 43, 226, 0.2);
+}
+
+.hero .cta-button .btn-icon {
+    transition: all 0.3s ease;
+}
+
+.hero .cta-button.secondary:hover .btn-icon {
+    transform: scale(1.1);
 }
 
 h2,
