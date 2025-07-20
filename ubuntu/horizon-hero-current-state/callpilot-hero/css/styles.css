@@ -3220,9 +3220,9 @@ h2,
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 193, 7, 0.1);
+    background: rgba(0, 122, 255, 0.1);
     border-radius: 8px;
-    color: rgba(255, 193, 7, 0.8);
+    color: rgba(0, 122, 255, 0.9);
 }
 
 .showcase-info {
@@ -3239,7 +3239,7 @@ h2,
 
 .showcase-subtitle {
     font-size: 13px;
-    color: rgba(255, 193, 7, 0.8);
+    color: rgba(255, 255, 255, 0.5);
     font-weight: 400;
     line-height: 1.4;
 }
@@ -3280,13 +3280,13 @@ h2,
 .premium-dashboard .metric-value {
     font-size: 20px;
     font-weight: 700;
-    color: rgba(255, 193, 7, 0.9) !important;
+    color: rgba(255, 255, 255, 0.95) !important;
     margin-bottom: 4px;
 }
 
 .premium-dashboard .metric-label {
     font-size: 12px;
-    color: rgba(255, 193, 7, 0.6) !important;
+    color: rgba(255, 255, 255, 0.5) !important;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -5369,9 +5369,8 @@ h2,
 /* Voice Technology Premium Section */
 .voice-technology-premium {
     padding: 120px 0;
-    background: linear-gradient(135deg, #000000 0%, #0a0a0a 25%, #111111 50%, #0a0a0a 75%, #000000 100%);
+    background: linear-gradient(135deg, #000000 0%, #100a1a 30%, #1a0f2a 50%, #100a1a 70%, #000000 100%);
     position: relative;
-    overflow: hidden;
 }
 
 .voice-technology-premium::before {
@@ -5382,11 +5381,9 @@ h2,
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 30%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(147, 112, 219, 0.12) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(186, 85, 211, 0.08) 0%, transparent 70%);
+        radial-gradient(ellipse at top left, rgba(138, 43, 226, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(147, 112, 219, 0.03) 0%, transparent 50%);
     pointer-events: none;
-    animation: backgroundPulse 8s ease-in-out infinite alternate;
 }
 
 @keyframes backgroundPulse {
@@ -8462,17 +8459,16 @@ h2,
 
 /* Voice Studio Cards - Premium Apple Design */
 .voice-studio-card {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
-    backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 28px;
-    padding: 36px;
-    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     box-shadow: 
-        0 12px 48px rgba(0, 0, 0, 0.15),
-        0 4px 16px rgba(0, 0, 0, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        0 4px 24px rgba(0, 0, 0, 0.2),
+        0 1px 2px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
 }
@@ -8492,12 +8488,10 @@ h2,
 }
 
 .voice-studio-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-4px);
     box-shadow: 
-        0 20px 80px rgba(0, 0, 0, 0.2),
-        0 8px 32px rgba(0, 0, 0, 0.12),
-        inset 0 1px 0 rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.25);
+        0 8px 32px rgba(0, 0, 0, 0.25),
+        0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .voice-studio-card:hover::before {
@@ -8509,8 +8503,8 @@ h2,
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 28px;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -8525,8 +8519,8 @@ h2,
 }
 
 .studio-title h3 {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 600;
     color: #ffffff;
     margin: 0;
 }
@@ -8582,18 +8576,18 @@ h2,
 .voice-gallery {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 24px;
+    gap: 8px;
+    margin-bottom: 16px;
 }
 
 .voice-option {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 16px 20px;
+    gap: 12px;
+    padding: 12px 16px;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
+    border-radius: 12px;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: pointer;
 }
@@ -8612,8 +8606,8 @@ h2,
 
 .voice-avatar {
     position: relative;
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8642,7 +8636,7 @@ h2,
 
 .avatar-text {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 14px;
     color: rgba(138, 43, 226, 0.9);
 }
 
@@ -8654,20 +8648,20 @@ h2,
 }
 
 .voice-name {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     color: #ffffff;
 }
 
 .voice-accent {
-    font-size: 13px;
+    font-size: 11px;
     color: rgba(255, 255, 255, 0.6);
     font-weight: 500;
 }
 
 .play-button {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8771,18 +8765,18 @@ h2,
 
 /* Tone Controller */
 .tone-controller {
-    margin-bottom: 28px;
+    margin-bottom: 20px;
 }
 
 .controller-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .controller-label {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.9);
 }
@@ -8882,29 +8876,29 @@ h2,
 .voice-characteristics {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    margin-bottom: 28px;
+    gap: 12px;
+    margin-bottom: 20px;
 }
 
 .characteristic {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 16px;
+    gap: 12px;
+    padding: 12px;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
+    border-radius: 12px;
 }
 
 .char-icon {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(138, 43, 226, 0.1);
     border: 1px solid rgba(138, 43, 226, 0.2);
-    border-radius: 10px;
+    border-radius: 8px;
     color: rgba(138, 43, 226, 0.8);
 }
 
