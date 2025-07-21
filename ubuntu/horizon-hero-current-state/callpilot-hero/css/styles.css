@@ -3697,12 +3697,12 @@ h2,
 .explore-features-btn {
     width: 100%;
     padding: 12px 24px;
-    background: rgba(138, 43, 226, 0.1);
+    background: rgba(191, 64, 255, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(138, 43, 226, 0.3);
+    border: 1px solid rgba(191, 64, 255, 0.3);
     border-radius: 12px;
-    color: rgba(138, 43, 226, 0.9);
+    color: rgba(191, 64, 255, 0.9);
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
@@ -3711,10 +3711,10 @@ h2,
 }
 
 .explore-features-btn:hover {
-    background: rgba(138, 43, 226, 0.2);
-    border-color: rgba(138, 43, 226, 0.5);
+    background: rgba(191, 64, 255, 0.2);
+    border-color: rgba(191, 64, 255, 0.5);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.2);
+    box-shadow: 0 4px 12px rgba(191, 64, 255, 0.2);
 }
 
 .unlock-list {
@@ -3736,7 +3736,7 @@ h2,
     position: absolute;
     left: 0;
     top: 6px;
-    color: rgba(255, 193, 7, 0.8);
+    color: #bf40ff;
     font-size: 11px;
     font-weight: 600;
 }
@@ -4103,7 +4103,7 @@ h2,
     content: '✓';
     position: absolute;
     left: 0;
-    color: rgba(138, 43, 226, 0.8);
+    color: #bf40ff;
     font-weight: bold;
 }
 
@@ -6673,7 +6673,7 @@ h2,
     content: '✓';
     position: absolute;
     left: 0;
-    color: rgba(138, 43, 226, 0.9);
+    color: #bf40ff;
     font-weight: bold;
     font-size: 16px;
     filter: drop-shadow(0 0 5px rgba(138, 43, 226, 0.5));
@@ -8297,7 +8297,7 @@ h2,
 .plans-section .apple-glass-card:nth-child(1)::after {
     content: '';
     position: absolute;
-    bottom: -100px;
+    top: -100px;
     left: 50%;
     transform: translateX(-50%);
     width: 250px;
@@ -8311,7 +8311,7 @@ h2,
 .plans-section .apple-glass-card:nth-child(2)::after {
     content: '';
     position: absolute;
-    bottom: -100px;
+    top: -100px;
     left: 50%;
     transform: translateX(-50%);
     width: 250px;
@@ -8325,7 +8325,7 @@ h2,
 .plans-section .apple-glass-card:nth-child(3)::after {
     content: '';
     position: absolute;
-    bottom: -100px;
+    top: -100px;
     left: 50%;
     transform: translateX(-50%);
     width: 250px;
@@ -8459,7 +8459,7 @@ h2,
     content: '✓';
     position: absolute;
     left: 0;
-    color: #ffc107 !important;
+    color: #bf40ff !important;
     font-weight: 700;
 }
 
@@ -8534,7 +8534,7 @@ h2,
     content: '✓';
     position: absolute;
     left: 0;
-    color: #8a2be2;
+    color: #bf40ff;
 }
 
 .plan-button {
