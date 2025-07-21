@@ -615,6 +615,10 @@ body {
     display: flex;
     gap: 20px;
     margin-bottom: 36px;
+    margin-left: 0;
+    padding-left: 0;
+    justify-content: flex-start;
+    align-items: center;
     transform: translateY(30px);
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 1.6s forwards;
@@ -731,6 +735,10 @@ body {
 .trust-indicators {
     display: flex;
     gap: 30px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 0;
+    padding-left: 0;
     transform: translateY(30px);
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 1.8s forwards;
@@ -10061,7 +10069,6 @@ h2,
         width: 40px;
         height: 40px;
     }
-}
     .hero-text {
         max-width: 100%;
     }
@@ -10075,6 +10082,7 @@ h2,
     .hero-buttons {
         justify-content: center;
     }
+}
     .trust-indicators {
         justify-content: center;
     }
