@@ -4260,130 +4260,130 @@ h2,
     font-weight: 400;
 }
 
-.faq-grid {
+.faq-glass-grid {
     display: grid;
     gap: 24px;
     margin-bottom: 80px;
 }
 
-.faq-item {
-    background: linear-gradient(135deg, rgba(15, 15, 15, 0.95), rgba(10, 10, 10, 0.95));
+.faq-glass-item {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    transition: all 0.5s ease;
     position: relative;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.faq-item::before {
+.faq-glass-item::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(138, 43, 226, 0.05), transparent);
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border-radius: 20px;
+    z-index: -1;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.6s ease;
 }
 
-.faq-item:hover::before {
+.faq-glass-item:hover::before {
     opacity: 1;
 }
 
-.faq-item:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 30px 60px rgba(138, 43, 226, 0.15);
-    border-color: rgba(255, 193, 7, 0.3);
+.faq-glass-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 8px 16px rgba(138, 43, 226, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
-.faq-question {
+.faq-glass-question {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 32px 28px;
+    padding: 28px 32px;
     cursor: pointer;
     position: relative;
     z-index: 1;
     transition: all 0.3s ease;
 }
 
-.faq-question:hover {
+.faq-glass-question:hover {
     background: rgba(138, 43, 226, 0.08);
 }
 
-.faq-question h3 {
-    font-size: 20px;
+.faq-glass-question h3 {
+    font-size: 18px;
     font-weight: 600;
     color: #ffffff;
     margin: 0;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     line-height: 1.4;
     flex: 1;
     padding-right: 20px;
 }
 
-.faq-toggle {
+.glass-toggle {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(147, 112, 219, 0.2));
-    border-radius: 50%;
-    border: 2px solid rgba(138, 43, 226, 0.3);
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: rgba(138, 43, 226, 0.9);
     transition: all 0.3s ease;
     flex-shrink: 0;
 }
 
-.faq-toggle:hover {
-    background: linear-gradient(135deg, rgba(138, 43, 226, 0.4), rgba(147, 112, 219, 0.4));
-    border-color: rgba(138, 43, 226, 0.6);
+.glass-toggle:hover {
+    background: rgba(138, 43, 226, 0.15);
+    border-color: rgba(138, 43, 226, 0.3);
+    color: rgba(138, 43, 226, 1);
     transform: scale(1.1);
 }
 
-.toggle-icon {
-    font-size: 24px;
-    font-weight: 300;
-    color: rgba(138, 43, 226, 0.9);
-    transition: all 0.3s ease;
-}
-
-.faq-item.active .toggle-icon {
+.faq-glass-item.active .glass-toggle {
+    background: rgba(138, 43, 226, 0.2);
+    border-color: rgba(138, 43, 226, 0.4);
     transform: rotate(45deg);
-    color: rgba(138, 43, 226, 1);
 }
 
-/* Debug styles to ensure FAQ is working */
-.faq-item.active {
-    border-color: rgba(138, 43, 226, 0.5) !important;
-    box-shadow: 0 0 30px rgba(138, 43, 226, 0.3) !important;
+.faq-glass-item.active {
+    border-color: rgba(138, 43, 226, 0.3);
+    box-shadow: 0 8px 32px rgba(138, 43, 226, 0.15);
 }
 
-.faq-item.active .faq-question {
-    background: rgba(138, 43, 226, 0.1) !important;
+.faq-glass-item.active .faq-glass-question {
+    background: rgba(138, 43, 226, 0.1);
 }
 
-.faq-answer {
+.faq-glass-answer {
     max-height: 0;
     overflow: hidden;
     transition: all 0.5s ease-in-out;
     opacity: 0;
-    padding: 0 28px 0 28px;
+    padding: 0 32px 0 32px;
 }
 
-.faq-item.active .faq-answer {
-    max-height: 1000px;
+.faq-glass-item.active .faq-glass-answer {
+    max-height: 300px;
     opacity: 1;
-    padding: 0 28px 32px 28px;
+    padding: 0 32px 28px 32px;
     transition: all 0.5s ease-in-out;
 }
 
-.faq-answer p {
-    font-size: 16px;
-    color: #cccccc;
+.faq-glass-answer p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.7;
     margin: 0;
     padding-top: 8px;
@@ -4435,50 +4435,96 @@ h2,
 .faq-contact-btn {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    padding: 18px 32px;
-    background: linear-gradient(135deg, rgba(138, 43, 226, 0.9), rgba(147, 112, 219, 0.9));
-    border: 2px solid rgba(138, 43, 226, 0.3);
-    border-radius: 16px;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 28px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
     color: #ffffff;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 500;
     text-decoration: none;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     z-index: 1;
     overflow: hidden;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .faq-contact-btn::before {
     content: '';
     position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+    border-radius: 12px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.faq-contact-btn::after {
+    content: '';
+    position: absolute;
     top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s ease;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
 }
 
 .faq-contact-btn:hover::before {
-    left: 100%;
+    opacity: 1;
+}
+
+.faq-contact-btn:hover::after {
+    opacity: 1;
 }
 
 .faq-contact-btn:hover {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 20px 40px rgba(138, 43, 226, 0.4);
-    border-color: rgba(138, 43, 226, 0.6);
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 16px 48px rgba(0, 0, 0, 0.2),
+        0 4px 12px rgba(138, 43, 226, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.faq-contact-btn:active {
+    transform: translateY(0);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 
+        0 4px 16px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.faq-contact-btn .btn-text {
+    position: relative;
+    z-index: 1;
+    letter-spacing: -0.01em;
 }
 
 .faq-contact-btn .btn-icon {
-    font-size: 18px;
-    transition: transform 0.3s ease;
+    font-size: 14px;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    z-index: 1;
 }
 
 .faq-contact-btn:hover .btn-icon {
-    transform: translateX(4px);
+    transform: translateX(2px);
 }
 
 

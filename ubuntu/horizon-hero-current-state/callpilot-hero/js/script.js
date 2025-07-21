@@ -2001,7 +2001,7 @@ function initFAQSection() {
     
     // Use a small delay to ensure all elements are rendered
     setTimeout(() => {
-        const faqItems = document.querySelectorAll('.faq-item');
+        const faqItems = document.querySelectorAll('.faq-glass-item');
         console.log('Found FAQ items:', faqItems.length);
         
         if (faqItems.length === 0) {
@@ -2012,9 +2012,9 @@ function initFAQSection() {
         faqItems.forEach((item, index) => {
             console.log(`Setting up FAQ item ${index + 1}`);
             
-            const question = item.querySelector('.faq-question');
-            const answer = item.querySelector('.faq-answer');
-            const toggle = item.querySelector('.faq-toggle');
+            const question = item.querySelector('.faq-glass-question');
+            const answer = item.querySelector('.faq-glass-answer');
+            const toggle = item.querySelector('.glass-toggle');
             
             console.log('FAQ elements found:', {
                 question: !!question,
