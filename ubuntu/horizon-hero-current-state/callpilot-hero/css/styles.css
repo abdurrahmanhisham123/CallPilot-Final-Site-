@@ -3697,12 +3697,12 @@ h2,
 .explore-features-btn {
     width: 100%;
     padding: 12px 24px;
-    background: rgba(255, 193, 7, 0.1);
+    background: rgba(138, 43, 226, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 193, 7, 0.3);
+    border: 1px solid rgba(138, 43, 226, 0.3);
     border-radius: 12px;
-    color: rgba(255, 193, 7, 0.9);
+    color: rgba(138, 43, 226, 0.9);
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
@@ -3711,10 +3711,10 @@ h2,
 }
 
 .explore-features-btn:hover {
-    background: rgba(255, 193, 7, 0.2);
-    border-color: rgba(255, 193, 7, 0.5);
+    background: rgba(138, 43, 226, 0.2);
+    border-color: rgba(138, 43, 226, 0.5);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.2);
+    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.2);
 }
 
 .unlock-list {
@@ -4789,7 +4789,7 @@ h2,
     font-weight: 700;
     text-align: center;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 193, 7, 0.8) 100%);
+    background: linear-gradient(90deg, #ffffff 0%, #ffffff 45%, rgba(138, 43, 226, 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -8273,29 +8273,75 @@ h2,
 
 .plans-section {
     padding: 120px 0;
-    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+    background: #000000;
     position: relative;
+    overflow: hidden;
 }
 
-.plans-section::before {
-    content: '';
+.plans-section .glass-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background:
-        radial-gradient(ellipse at top right, rgba(255, 193, 7, 0.15) 0%, transparent 60%),
-        radial-gradient(ellipse at bottom left, rgba(255, 193, 7, 0.12) 0%, transparent 60%),
-        radial-gradient(circle at center, rgba(255, 193, 7, 0.08) 0%, transparent 40%);
+    background: transparent;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     pointer-events: none;
+    z-index: 2;
+}
+.plans-section .apple-glass-card {
+    position: relative;
+    overflow: visible;
+}
+.plans-section .apple-glass-card:nth-child(1)::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.6) 0%, rgba(138, 43, 226, 0.25) 50%, transparent 100%);
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+}
+.plans-section .apple-glass-card:nth-child(2)::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.6) 0%, rgba(138, 43, 226, 0.25) 50%, transparent 100%);
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+}
+.plans-section .apple-glass-card:nth-child(3)::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.6) 0%, rgba(138, 43, 226, 0.25) 50%, transparent 100%);
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .section-header {
     text-align: center;
     margin-bottom: 80px;
     position: relative;
-    z-index: 2;
+    z-index: 3;
 }
 
 .section-title {
@@ -8317,7 +8363,7 @@ h2,
     grid-template-columns: repeat(3, 1fr);
     gap: 50px;
     position: relative;
-    z-index: 2;
+    z-index: 3;
 }
 
 .plan-card {
