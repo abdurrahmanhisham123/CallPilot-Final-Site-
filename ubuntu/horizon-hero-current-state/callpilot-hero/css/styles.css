@@ -4252,7 +4252,7 @@ h2,
 /* Frequently Asked Questions Section */
 .faq-section {
     padding: 120px 0;
-    background: linear-gradient(135deg, rgba(5, 5, 5, 0.98), rgba(15, 15, 15, 0.95));
+    background: #000000;
     position: relative;
     overflow: hidden;
 }
@@ -4260,20 +4260,36 @@ h2,
 .faq-section::before {
     content: '';
     position: absolute;
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    height: 1200px;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.6) 0%, rgba(138, 43, 226, 0.25) 50%, transparent 100%);
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 1;
+}
+.faq-section::after {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 20%, rgba(138, 43, 226, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 70% 80%, rgba(147, 112, 219, 0.06) 0%, transparent 50%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.01) 0%, rgba(138, 43, 226, 0.015) 25%, rgba(255, 255, 255, 0.005) 50%, rgba(147, 112, 219, 0.01) 75%, rgba(255, 255, 255, 0.008) 100%);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
     pointer-events: none;
+    z-index: 2;
 }
 
 .faq-content {
     max-width: 1000px;
     margin: 0 auto;
     position: relative;
-    z-index: 1;
+    z-index: 3;
 }
 
 .faq-header {
@@ -4282,9 +4298,12 @@ h2,
 }
 
 .faq-title {
-    font-size: 56px;
+    font-size: 48px;
     font-weight: 700;
-    color: #ffffff;
+    background: linear-gradient(90deg, #ffffff 0%, #ffffff 50%, rgba(138, 43, 226, 0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 24px;
     text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
     transform: perspective(1000px) rotateX(2deg);
@@ -4299,7 +4318,7 @@ h2,
 }
 
 .faq-description {
-    font-size: 20px;
+    font-size: 18px;
     color: #cccccc;
     line-height: 1.6;
     max-width: 700px;
@@ -5451,22 +5470,37 @@ h2,
 /* Discovery & Planning Section */
 .discovery-planning {
     padding: 80px 0;
-    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+    background: #000000;
     position: relative;
+    overflow: hidden;
 }
 
 .discovery-planning::before {
+    content: '';
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 127, 80, 0.6) 0%, rgba(255, 127, 80, 0.25) 50%, transparent 100%);
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 1;
+}
+.discovery-planning::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background:
-        radial-gradient(ellipse at top right, rgba(138, 43, 226, 0.08) 0%, transparent 70%),
-        radial-gradient(ellipse at bottom left, rgba(138, 43, 226, 0.06) 0%, transparent 70%),
-        radial-gradient(circle at center, rgba(138, 43, 226, 0.04) 0%, transparent 50%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.01) 0%, rgba(255, 127, 80, 0.015) 25%, rgba(255, 255, 255, 0.005) 50%, rgba(255, 127, 80, 0.01) 75%, rgba(255, 255, 255, 0.008) 100%);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
     pointer-events: none;
+    z-index: 2;
 }
 
 .discovery-header {
@@ -5517,10 +5551,15 @@ h2,
 
 /* Discovery Planning Title Gradient */
 .discovery-planning-title {
-    background: linear-gradient(135deg, #ffffff 0%, rgba(138, 43, 226, 1) 100%) !important;
+    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 127, 80, 1) 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
+}
+
+.discovery-content {
+    position: relative;
+    z-index: 3;
 }
 
 /* Apple Discovery Cards */
@@ -5529,6 +5568,8 @@ h2,
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
     margin-bottom: 80px;
+    position: relative;
+    z-index: 3;
 }
 
 .apple-discovery-card {
@@ -5562,20 +5603,20 @@ h2,
     box-shadow: 
         0 20px 60px rgba(0, 0, 0, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    border-color: rgba(138, 43, 226, 0.4);
+    border-color: rgba(255, 127, 80, 0.4);
 }
 
 .discovery-card-icon {
     width: 56px;
     height: 56px;
-    background: rgba(138, 43, 226, 0.1);
+    background: rgba(255, 127, 80, 0.1);
     border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 24px;
-    color: rgba(138, 43, 226, 0.9);
-    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.2);
+    color: rgba(255, 127, 80, 0.9);
+    box-shadow: 0 4px 12px rgba(255, 127, 80, 0.2);
 }
 
 .discovery-card-title {
@@ -5694,7 +5735,7 @@ h2,
 }
 
 .progress-fill {
-    background: linear-gradient(135deg, #8a2be2, #9932cc);
+    background: linear-gradient(135deg, rgba(255, 127, 80, 0.8), rgba(255, 99, 71, 0.9));
     height: 100%;
     border-radius: 10px;
     transition: width 0.3s ease;
@@ -8682,36 +8723,51 @@ h2,
 /* New Section */
 .new-section {
     padding: 120px 0;
-    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+    background: #000000;
     position: relative;
+    overflow: hidden;
 }
 
 .new-section::before {
+    content: '';
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.6) 0%, rgba(138, 43, 226, 0.25) 50%, transparent 100%);
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 1;
+}
+.new-section::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background:
-        radial-gradient(ellipse at top right, rgba(138, 43, 226, 0.10) 0%, transparent 60%),
-        radial-gradient(ellipse at bottom left, rgba(138, 43, 226, 0.08) 0%, transparent 60%),
-        radial-gradient(circle at center, rgba(138, 43, 226, 0.05) 0%, transparent 40%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.01) 0%, rgba(138, 43, 226, 0.015) 25%, rgba(255, 255, 255, 0.005) 50%, rgba(147, 112, 219, 0.01) 75%, rgba(255, 255, 255, 0.008) 100%);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
     pointer-events: none;
+    z-index: 2;
 }
 
 .new-section-header {
     text-align: center;
     margin-bottom: 80px;
     position: relative;
-    z-index: 2;
+    z-index: 3;
 }
 
 .new-section-title {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
     font-size: 48px;
     font-weight: 800;
-    background: linear-gradient(135deg, #ffffff 0%, rgba(138, 43, 226, 0.7) 100%);
+    background: linear-gradient(90deg, #ffffff 0%, #ffffff 50%, rgba(138, 43, 226, 0.8) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -8742,6 +8798,8 @@ h2,
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     margin-top: 60px;
+    position: relative;
+    z-index: 3;
 }
 
 .intelligence-card {
