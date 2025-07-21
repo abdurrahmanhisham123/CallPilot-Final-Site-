@@ -83,53 +83,98 @@ body {
 }
 
 .nav-link {
-    color: #cccccc;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 14px;
-    transition: all 0.2s ease;
-    position: relative;
-    padding: 6px 0;
-    transform: perspective(1000px) rotateX(0deg);
-}
-
-.nav-link:hover {
-    color: #ffffff;
-    transform: perspective(1000px) rotateX(-5deg) translateZ(5px);
-}
-
-.nav-link.active {
-    color: #ffffff;
-}
-
-.nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, rgba(138, 43, 226, 0.8), rgba(147, 112, 219, 0.6));
-    border-radius: 1px;
-}
-
-
-.sign-in {
-    color: #cccccc;
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     font-weight: 500;
     font-size: 14px;
     transition: all 0.3s ease;
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    padding: 8px 16px;
+    border-radius: 6px;
+    letter-spacing: -0.005em;
     background: transparent;
 }
 
-.sign-in:hover {
-    background: rgba(255, 255, 255, 0.05);
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-link:hover {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.nav-link:hover::before {
+    opacity: 1;
+}
+
+.nav-link.active {
     color: #ffffff;
-    border-color: rgba(138, 43, 226, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+}
+
+
+.sign-in {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 4px 16px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.sign-in::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.sign-in:hover::before {
+    opacity: 1;
+}
+
+.sign-in:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.sign-in:active {
+    transform: translateY(0);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .user-actions {
@@ -139,23 +184,77 @@ body {
 }
 
 .contact-btn {
-    background: linear-gradient(135deg, #8a2be2, #9370db);
+    background: rgba(138, 43, 226, 0.15);
+    backdrop-filter: blur(16px);
     color: #ffffff;
-    padding: 11px 22px;
-    border-radius: 8px;
+    padding: 11px 20px;
+    border-radius: 10px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 14px;
-    transition: all 0.3s ease;
-    border: none;
-    box-shadow: 0 4px 20px rgba(138, 43, 226, 0.4);
-    transform: perspective(1000px) translateY(0);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.12),
+        0 2px 6px rgba(138, 43, 226, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.contact-btn::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(147, 112, 219, 0.15));
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.contact-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(138, 43, 226, 0.15) 0%, transparent 70%);
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.contact-btn:hover::before {
+    opacity: 1;
+}
+
+.contact-btn:hover::after {
+    opacity: 1;
 }
 
 .contact-btn:hover {
-    background: linear-gradient(135deg, #9932cc, #a48edb);
-    transform: perspective(1000px) translateY(-2px);
-    box-shadow: 0 8px 30px rgba(138, 43, 226, 0.5);
+    background: rgba(138, 43, 226, 0.25);
+    border-color: rgba(138, 43, 226, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 12px 32px rgba(0, 0, 0, 0.2),
+        0 4px 12px rgba(138, 43, 226, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.contact-btn:active {
+    transform: translateY(-1px);
+    background: rgba(138, 43, 226, 0.2);
+    box-shadow: 
+        0 6px 16px rgba(0, 0, 0, 0.15),
+        0 2px 6px rgba(138, 43, 226, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 /* ==========================================================================
