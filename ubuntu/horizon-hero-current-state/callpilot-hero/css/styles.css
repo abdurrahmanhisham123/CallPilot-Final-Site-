@@ -5629,7 +5629,7 @@ h2,
 
 /* Voice Technology Premium Section */
 .voice-technology-premium {
-    padding: 120px 0;
+    padding: 120px 0 60px 0;
     background: linear-gradient(135deg, #000000 0%, #100a1a 30%, #1a0f2a 50%, #100a1a 70%, #000000 100%);
     position: relative;
 }
@@ -7233,8 +7233,8 @@ h2,
    Voice Showcase Section
    ========================================================================== */
 .voice-showcase {
-    padding: 80px 0;
-    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+    padding: 60px 0 80px 0;
+    background: linear-gradient(135deg, #000000 0%, #100a1a 30%, #1a0f2a 50%, #100a1a 70%, #000000 100%);
     position: relative;
     overflow: hidden;
 }
@@ -7950,8 +7950,8 @@ h2,
    ========================================================================== */
 
 .voice-showcase {
-    padding: 80px 0;
-    background: #000;
+    padding: 60px 0 80px 0;
+    background: linear-gradient(135deg, #000000 0%, #100a1a 30%, #1a0f2a 50%, #100a1a 70%, #000000 100%);
     position: relative;
     overflow: hidden;
 }
