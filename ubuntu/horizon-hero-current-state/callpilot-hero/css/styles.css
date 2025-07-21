@@ -4648,9 +4648,9 @@ h2,
     right: 0;
     bottom: 0;
     background:
-        radial-gradient(ellipse at top right, rgba(255, 127, 80, 0.10) 0%, transparent 60%),
-        radial-gradient(ellipse at bottom left, rgba(255, 127, 80, 0.08) 0%, transparent 60%),
-        radial-gradient(circle at center, rgba(255, 127, 80, 0.05) 0%, transparent 40%);
+        radial-gradient(ellipse at top right, rgba(255, 127, 80, 0.01) 0%, transparent 60%),
+        radial-gradient(ellipse at bottom left, rgba(255, 127, 80, 0.008) 0%, transparent 60%),
+        radial-gradient(circle at center, rgba(255, 127, 80, 0.005) 0%, transparent 40%);
     pointer-events: none;
 }
 
@@ -4659,7 +4659,7 @@ h2,
     font-weight: 700;
     text-align: center;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 127, 80, 0.7) 100%);
+    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 127, 80, 0.15) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
