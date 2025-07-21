@@ -348,13 +348,6 @@
     <!-- AI Exploration Section -->
     <!-- Unified background wrapper for three sections -->
     <div style="background: #000000; position: relative;">
-        <!-- Purple circles positioned behind specific cards -->
-        <!-- Circle 1: Centered parallel with emerging-frontiers-card -->
-        <div style="position: absolute; top: 8%; left: 1%; width: 550px; height: 450px; border-radius: 50%; background: radial-gradient(circle, rgba(138, 43, 226, 0.6) 0%, rgba(138, 43, 226, 0.25) 50%, transparent 100%); filter: blur(80px); z-index: 1;"></div>
-        <!-- Circle 2: Behind apple-glass-card (right side of second section) -->
-        <div style="position: absolute; top: 40%; right: 1%; width: 550px; height: 450px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 127, 80, 0.6) 0%, rgba(255, 127, 80, 0.25) 50%, transparent 100%); filter: blur(80px); z-index: 1;"></div>
-        <!-- Circle 3: Behind premium-dashboard card (left side of third section) -->
-        <div style="position: absolute; top: 75%; left: 1%; width: 550px; height: 450px; border-radius: 50%; background: radial-gradient(circle, rgba(177, 44, 0, 0.6) 0%, rgba(177, 44, 0, 0.25) 50%, transparent 100%); filter: blur(80px); z-index: 1;"></div>
         
         <!-- Glass effect overlay -->
         <div style="content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(255, 255, 255, 0.01) 0%, rgba(138, 43, 226, 0.015) 25%, rgba(255, 255, 255, 0.005) 50%, rgba(147, 112, 219, 0.01) 75%, rgba(255, 255, 255, 0.008) 100%); backdrop-filter: blur(1px); -webkit-backdrop-filter: blur(1px); pointer-events: none; z-index: 2;"></div>
@@ -362,8 +355,10 @@
     <section class="ai-exploration" style="position: relative; z-index: 10;">
         <div class="container">
             <div class="exploration-content">
-                <div class="exploration-visual">
-                    <div class="emerging-frontiers-card">
+                <div class="exploration-visual" style="position: relative;">
+                    <!-- Circle under emerging-frontiers-card -->
+                    <div style="position: absolute; top: 50px; left: -200px; width: 550px; height: 450px; border-radius: 50%; background: radial-gradient(circle, rgba(138, 43, 226, 0.6) 0%, rgba(138, 43, 226, 0.25) 50%, transparent 100%); filter: blur(80px); z-index: 1; pointer-events: none;"></div>
+                    <div class="emerging-frontiers-card" style="position: relative; z-index: 2;">
                         <div class="frontiers-header">
                             <div class="frontiers-badge">
                                 <div class="badge-dot"></div>
@@ -495,8 +490,10 @@
                         help in order placing, tracking and general queries.
                     </div>
                 </div>
-                <div class="brilliance-visual">
-                    <div class="apple-glass-card">
+                <div class="brilliance-visual" style="position: relative;">
+                    <!-- Circle under apple-glass-card -->
+                    <div style="position: absolute; top: 50px; right: -200px; width: 550px; height: 450px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 127, 80, 0.6) 0%, rgba(255, 127, 80, 0.25) 50%, transparent 100%); filter: blur(80px); z-index: 1; pointer-events: none;"></div>
+                    <div class="apple-glass-card" style="position: relative; z-index: 2;">
                         <div class="glass-header">
                             <div class="glass-indicator">
                                 <div class="indicator-dot active"></div>
@@ -585,8 +582,10 @@
     <section class="dashboard-power" style="position: relative; z-index: 10;">
         <div class="container">
             <div class="power-content no-animation">
-                <div class="power-visual">
-                    <div class="apple-glass-card premium-dashboard">
+                <div class="power-visual" style="position: relative;">
+                    <!-- Circle under premium-dashboard card -->
+                    <div style="position: absolute; top: 50px; left: -200px; width: 550px; height: 450px; border-radius: 50%; background: radial-gradient(circle, rgba(177, 44, 0, 0.6) 0%, rgba(177, 44, 0, 0.25) 50%, transparent 100%); filter: blur(80px); z-index: 1; pointer-events: none;"></div>
+                    <div class="apple-glass-card premium-dashboard" style="position: relative; z-index: 2;">
                         <div class="glass-header">
                             <div class="glass-indicator">
                                 <div class="indicator-dot active"></div>
