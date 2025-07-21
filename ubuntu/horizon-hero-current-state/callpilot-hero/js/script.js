@@ -98,12 +98,6 @@ function init() {
         console.error("Error injecting dynamic CSS:", e);
     }
     try {
-        createScrollWaveEffect();
-        console.log("Scroll wave effect created successfully.");
-    } catch (e) {
-        console.error("Error creating scroll wave effect:", e);
-    }
-    try {
         enhanceMetricAnimations();
         console.log("Metric animations enhanced successfully.");
     } catch (e) {
@@ -196,11 +190,6 @@ function injectDynamicCSS() {
             transform: scale(0);
             animation: ripple 0.6s linear;
             pointer-events: none;
-        }
-        @keyframes sectionGlow {
-            0% { filter: brightness(1); }
-            50% { filter: brightness(1.1) drop-shadow(0 0 20px rgba(138, 43, 226, 0.3)); }
-            100% { filter: brightness(1); }
         }
         
         /* Smooth scroll animations */
@@ -500,17 +489,6 @@ function injectDynamicCSS() {
             scroll-behavior: smooth;
         }
         
-        /* Enhanced scroll indicator */
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background: linear-gradient(90deg, #8a2be2, #9932cc);
-            z-index: 9999;
-            transition: width 0.1s ease;
-        }
     `;
     document.head.appendChild(style);
 }
@@ -1120,18 +1098,6 @@ function initSparklineAnimations() {
 function initSmoothScrollAnimations() {
     console.log("Initializing smooth scroll animations.");
 
-    // Create scroll progress indicator
-    const scrollProgress = document.createElement("div");
-    scrollProgress.className = "scroll-progress";
-    document.body.appendChild(scrollProgress);
-
-    // Update scroll progress
-    function updateScrollProgress() {
-        const scrollTop = window.pageYOffset;
-        const docHeight = document.body.scrollHeight - window.innerHeight;
-        const scrollPercent = (scrollTop / docHeight) * 100;
-        scrollProgress.style.width = scrollPercent + "%";
-    }
 
     // Add scroll animation classes to elements
     const elementsToAnimate = [
@@ -1332,7 +1298,6 @@ function initSmoothScrollAnimations() {
     function onScroll() {
         if (!ticking) {
             requestAnimationFrame(() => {
-                updateScrollProgress();
                 ticking = false;
             });
             ticking = true;
@@ -1340,9 +1305,6 @@ function initSmoothScrollAnimations() {
     }
 
     window.addEventListener("scroll", onScroll);
-    
-    // Initial call
-    updateScrollProgress();
     
     console.log("Smooth scroll animations initialized with", animatedElements.length, "elements");
 }
@@ -1488,56 +1450,7 @@ function enhanceMetricAnimations() {
     });
 }
 
-/**
- * Creates a wave effect that follows the scroll position.
- */
-function createScrollWaveEffect() {
-    const waveElement = document.createElement("div");
-    waveElement.style.position = "fixed";
-    waveElement.style.top = "0";
-    waveElement.style.left = "0";
-    waveElement.style.width = "100%";
-    waveElement.style.height = "100%";
-    waveElement.style.background = "linear-gradient(45deg, transparent 40%, rgba(138, 43, 226, 0.03) 50%, transparent 60%)";
-    waveElement.style.pointerEvents = "none";
-    waveElement.style.zIndex = "1";
-    waveElement.style.opacity = "0";
-    waveElement.style.transition = "opacity 0.3s ease";
-    
-    document.body.appendChild(waveElement);
-    
-    let lastScrollY = window.scrollY;
-    let ticking = false;
-    
-    function updateWave() {
-        const currentScrollY = window.scrollY;
-        const scrollDelta = Math.abs(currentScrollY - lastScrollY);
-        
-        if (scrollDelta > 5) {
-            waveElement.style.opacity = "1";
-            waveElement.style.transform = `translateY(${currentScrollY * 0.05}px) rotate(${currentScrollY * 0.02}deg)`;
-            
-            setTimeout(() => {
-                waveElement.style.opacity = "0";
-            }, 300);
-        }
-        
-        lastScrollY = currentScrollY;
-        ticking = false;
-    }
-    
-    window.addEventListener("scroll", () => {
-        if (!ticking) {
-            requestAnimationFrame(updateWave);
-            ticking = true;
-        }
-    });
-}
 
-// Initialize wave effect
-document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(createScrollWaveEffect, 1000);
-});
 
 /**
  * Initializes animations for the Victory Solutions section.

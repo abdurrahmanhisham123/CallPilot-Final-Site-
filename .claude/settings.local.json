@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(python3:*)",
-      "Bash(lsof:*)"
+      "Bash(lsof:*)",
+      "Bash(grep:*)"
     ],
     "deny": []
   }
