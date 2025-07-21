@@ -123,33 +123,84 @@
 <body>
     <!-- Header -->
     <header class="header">
+        <div class="header-gradient-bg"></div>
         <div class="container">
             <div class="header-content">
                 <!-- Logo -->
                 <a href="#hero" class="logo">
-                    <span class="logo-text">CallPilot</span>
+                    <div class="logo-container">
+                        <div class="logo-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <circle cx="16" cy="16" r="14" stroke="url(#logoGradient)" stroke-width="2"/>
+                                <path d="M12 11c0-2.21 1.79-4 4-4s4 1.79 4 4v6c0 2.21-1.79 4-4 4s-4-1.79-4-4v-6z" fill="url(#logoGradient)"/>
+                                <circle cx="16" cy="14" r="2" fill="rgba(255,255,255,0.8)"/>
+                                <defs>
+                                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#8a2be2"/>
+                                        <stop offset="100%" style="stop-color:#bf40ff"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="logo-text-container">
+                            <span class="logo-text">CallPilot</span>
+                            <span class="logo-subtitle">AI Voice Intelligence</span>
+                        </div>
+                    </div>
                 </a>
                 
                 <!-- Navigation -->
                 <nav class="nav">
                     <ul class="nav-list">
                         <li class="nav-item">
-                            <a href="#hero" class="nav-link active">Home</a>
+                            <a href="#hero" class="nav-link active">
+                                <span class="nav-text">Home</span>
+                                <div class="nav-indicator"></div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a href="plans.html" class="nav-link">Plans</a>
+                            <a href="plans.html" class="nav-link">
+                                <span class="nav-text">Plans</span>
+                                <div class="nav-indicator"></div>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#ai-demo-call" class="nav-link">AI Demo Call</a>
+                            <a href="#ai-demo-call" class="nav-link">
+                                <span class="nav-text">AI Demo</span>
+                                <div class="nav-indicator"></div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#plans" class="nav-link">
+                                <span class="nav-text">Features</span>
+                                <div class="nav-indicator"></div>
+                            </a>
                         </li>
                     </ul>
                 </nav>
                 
                 <!-- User Actions -->
                 <div class="user-actions">
-                    <a href="#contact" class="sign-in">Sign In</a>
-                    <a href="#contact" class="contact-btn">Contact Us</a>
+                    <a href="#contact" class="sign-in-btn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M8 8c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm0 2c-2 0-6 1-6 3v1h12v-1c0-2-4-3-6-3z" fill="currentColor"/>
+                        </svg>
+                        <span>Sign In</span>
+                    </a>
+                    <a href="#contact" class="contact-btn">
+                        <span>Get Started</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
                 </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn">
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                </button>
             </div>
         </div>
     </header>
