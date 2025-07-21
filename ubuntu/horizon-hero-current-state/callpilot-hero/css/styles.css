@@ -4635,7 +4635,7 @@ h2,
 /* Call Handling Section */
 .call-handling {
     padding: 80px 0;
-    background: linear-gradient(120deg, #000000 0%, #1a1010 25%, #241818 45%, #1a1010 65%, #0f0808 85%, #000000 100%);
+    background: linear-gradient(135deg, #000000 0%, #080505 30%, #101010 50%, #080505 70%, #000000 100%);
     position: relative;
     overflow: hidden;
 }
@@ -4647,10 +4647,10 @@ h2,
     left: 0;
     right: 0;
     bottom: 0;
-    background:
-        radial-gradient(ellipse at top right, rgba(255, 127, 80, 0.01) 0%, transparent 60%),
-        radial-gradient(ellipse at bottom left, rgba(255, 127, 80, 0.008) 0%, transparent 60%),
-        radial-gradient(circle at center, rgba(255, 127, 80, 0.005) 0%, transparent 40%);
+    background: 
+        radial-gradient(ellipse at bottom left, rgba(255, 127, 80, 0.10) 0%, transparent 60%),
+        radial-gradient(ellipse at top right, rgba(255, 127, 80, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at center, rgba(255, 127, 80, 0.05) 0%, transparent 40%);
     pointer-events: none;
 }
 
@@ -4659,7 +4659,7 @@ h2,
     font-weight: 700;
     text-align: center;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 127, 80, 0.15) 100%);
+    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 127, 80, 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -5354,8 +5354,9 @@ h2,
     right: 0;
     bottom: 0;
     background:
-        radial-gradient(ellipse at top right, rgba(255, 127, 80, 0.06) 0%, transparent 70%),
-        radial-gradient(ellipse at bottom left, rgba(255, 127, 80, 0.05) 0%, transparent 70%);
+        radial-gradient(ellipse at top right, rgba(138, 43, 226, 0.08) 0%, transparent 70%),
+        radial-gradient(ellipse at bottom left, rgba(138, 43, 226, 0.06) 0%, transparent 70%),
+        radial-gradient(circle at center, rgba(138, 43, 226, 0.04) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -5407,7 +5408,7 @@ h2,
 
 /* Discovery Planning Title Gradient */
 .discovery-planning-title {
-    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 127, 80, 0.9) 100%) !important;
+    background: linear-gradient(135deg, #ffffff 0%, rgba(138, 43, 226, 1) 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
@@ -5452,20 +5453,20 @@ h2,
     box-shadow: 
         0 20px 60px rgba(0, 0, 0, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 127, 80, 0.4);
+    border-color: rgba(138, 43, 226, 0.4);
 }
 
 .discovery-card-icon {
     width: 56px;
     height: 56px;
-    background: rgba(255, 127, 80, 0.1);
+    background: rgba(138, 43, 226, 0.1);
     border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 24px;
-    color: rgba(255, 127, 80, 0.9);
-    box-shadow: 0 4px 12px rgba(255, 127, 80, 0.2);
+    color: rgba(138, 43, 226, 0.9);
+    box-shadow: 0 4px 12px rgba(138, 43, 226, 0.2);
 }
 
 .discovery-card-title {
@@ -5496,7 +5497,7 @@ h2,
     border-radius: 12px;
     font-size: 13px;
     font-weight: 500;
-    border: 1px solid rgba(255, 127, 80, 0.2);
+    border: 1px solid rgba(138, 43, 226, 0.2);
     backdrop-filter: blur(10px);
 }
 
@@ -5584,7 +5585,7 @@ h2,
 }
 
 .progress-fill {
-    background: linear-gradient(135deg, #ff7f50, #ff6347);
+    background: linear-gradient(135deg, #8a2be2, #9932cc);
     height: 100%;
     border-radius: 10px;
     transition: width 0.3s ease;

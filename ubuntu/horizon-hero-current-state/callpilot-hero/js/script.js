@@ -489,6 +489,18 @@ function injectDynamicCSS() {
             scroll-behavior: smooth;
         }
         
+        /* Scroll progress indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #8a2be2, #9932cc);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+        
     `;
     document.head.appendChild(style);
 }
@@ -1098,6 +1110,18 @@ function initSparklineAnimations() {
 function initSmoothScrollAnimations() {
     console.log("Initializing smooth scroll animations.");
 
+    // Create scroll progress indicator
+    const scrollProgress = document.createElement("div");
+    scrollProgress.className = "scroll-progress";
+    document.body.appendChild(scrollProgress);
+
+    // Update scroll progress
+    function updateScrollProgress() {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        scrollProgress.style.width = scrollPercent + "%";
+    }
 
     // Add scroll animation classes to elements
     const elementsToAnimate = [
@@ -1298,6 +1322,7 @@ function initSmoothScrollAnimations() {
     function onScroll() {
         if (!ticking) {
             requestAnimationFrame(() => {
+                updateScrollProgress();
                 ticking = false;
             });
             ticking = true;
@@ -1305,6 +1330,9 @@ function initSmoothScrollAnimations() {
     }
 
     window.addEventListener("scroll", onScroll);
+    
+    // Initial call
+    updateScrollProgress();
     
     console.log("Smooth scroll animations initialized with", animatedElements.length, "elements");
 }
