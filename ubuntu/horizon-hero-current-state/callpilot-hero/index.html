@@ -7,6 +7,78 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/responsive.css">
     <script src="js/script.js" defer></script>
+    <style>
+        /* View Research button - text only style */
+        .ai-exploration .cta-button.secondary {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            color: #ffffff !important;
+            padding: 0 !important;
+            font-size: 16px !important;
+            font-weight: 500 !important;
+            text-decoration: none !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+        
+        .ai-exploration .cta-button.secondary:hover {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            color: #ffffff !important;
+            transform: translateY(-2px) !important;
+            opacity: 0.8 !important;
+        }
+        
+        /* Live Demo button - text only style (keeping play icon) */
+        .hero .cta-button.secondary {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            color: #ffffff !important;
+            padding: 0 !important;
+            font-size: 16px !important;
+            font-weight: 500 !important;
+            text-decoration: none !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+        
+        .hero .cta-button.secondary:hover {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            color: #ffffff !important;
+            transform: translateY(-2px) !important;
+            opacity: 0.8 !important;
+        }
+        
+        .hero .cta-button.secondary svg {
+            color: #ffffff !important;
+        }
+        
+        /* Golden Yellow styling for third section elements */
+        .dashboard-power .section-label {
+            color: rgba(253, 191, 96, 0.9) !important;
+        }
+        
+        .dashboard-power .power-title {
+            color: #ffffff !important;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            -webkit-text-fill-color: #ffffff !important;
+            background-clip: unset !important;
+        }
+        
+        .dashboard-power .power-fact {
+            color: rgba(253, 191, 96, 0.85) !important;
+        }
+        
+        .dashboard-power .power-fact strong {
+            color: rgba(253, 191, 96, 1) !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -234,7 +306,20 @@
 
 
     <!-- AI Exploration Section -->
-    <section class="ai-exploration">
+    <!-- Unified background wrapper for three sections -->
+    <div style="background: #000000; position: relative;">
+        <!-- Purple circles positioned behind specific cards -->
+        <!-- Circle 1: Centered parallel with emerging-frontiers-card -->
+        <div style="position: absolute; top: 8%; left: 1%; width: 550px; height: 450px; border-radius: 50%; background: radial-gradient(circle, rgba(138, 43, 226, 0.6) 0%, rgba(138, 43, 226, 0.25) 50%, transparent 100%); filter: blur(80px); z-index: 1;"></div>
+        <!-- Circle 2: Behind apple-glass-card (right side of second section) -->
+        <div style="position: absolute; top: 40%; right: 1%; width: 550px; height: 450px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 127, 80, 0.6) 0%, rgba(255, 127, 80, 0.25) 50%, transparent 100%); filter: blur(80px); z-index: 1;"></div>
+        <!-- Circle 3: Behind premium-dashboard card (left side of third section) -->
+        <div style="position: absolute; top: 75%; left: 1%; width: 550px; height: 450px; border-radius: 50%; background: radial-gradient(circle, rgba(253, 191, 96, 0.6) 0%, rgba(253, 191, 96, 0.25) 50%, transparent 100%); filter: blur(80px); z-index: 1;"></div>
+        
+        <!-- Glass effect overlay -->
+        <div style="content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(255, 255, 255, 0.01) 0%, rgba(138, 43, 226, 0.015) 25%, rgba(255, 255, 255, 0.005) 50%, rgba(147, 112, 219, 0.01) 75%, rgba(255, 255, 255, 0.008) 100%); backdrop-filter: blur(1px); -webkit-backdrop-filter: blur(1px); pointer-events: none; z-index: 2;"></div>
+        
+    <section class="ai-exploration" style="position: relative; z-index: 10;">
         <div class="container">
             <div class="exploration-content">
                 <div class="exploration-visual">
@@ -355,7 +440,7 @@
     </section>
 
     <!-- AI Brilliance Section -->
-    <section class="ai-brilliance">
+    <section class="ai-brilliance" style="position: relative; z-index: 10;">
         <div class="container">
             <div class="brilliance-content">
                 <div class="brilliance-text">
@@ -457,7 +542,7 @@
     </section>
 
     <!-- Dashboard Power Section -->
-    <section class="dashboard-power">
+    <section class="dashboard-power" style="position: relative; z-index: 10;">
         <div class="container">
             <div class="power-content no-animation">
                 <div class="power-visual">
@@ -556,6 +641,9 @@
             </div>
         </div>
     </section>
+    
+    </div>
+    <!-- End of unified background wrapper -->
 
     <section class="voice-technology-premium">
         <div class="container">

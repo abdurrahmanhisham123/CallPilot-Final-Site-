@@ -2262,22 +2262,9 @@ body {
 
 /* AI Exploration Section */
 .ai-exploration {
-    padding: 120px 0;
-    background: linear-gradient(135deg, #000000 0%, #100a1a 30%, #1a0f2a 50%, #100a1a 70%, #000000 100%);
+    padding: 80px 0 80px 0;
+    background: transparent;
     position: relative;
-}
-
-.ai-exploration::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(ellipse at top left, rgba(138, 43, 226, 0.04) 0%, transparent 50%),
-        radial-gradient(ellipse at bottom right, rgba(147, 112, 219, 0.03) 0%, transparent 50%);
-    pointer-events: none;
 }
 
 .exploration-content {
@@ -2920,22 +2907,9 @@ h2,
 
 /* AI Brilliance Section */
 .ai-brilliance {
-    padding: 120px 0;
-    background: linear-gradient(135deg, #000000 0%, #100a1a 30%, #1a0f2a 50%, #100a1a 70%, #000000 100%);
+    padding: 80px 0 80px 0;
+    background: transparent;
     position: relative;
-}
-
-.ai-brilliance::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(ellipse at top left, rgba(138, 43, 226, 0.04) 0%, transparent 50%),
-        radial-gradient(ellipse at bottom right, rgba(147, 112, 219, 0.03) 0%, transparent 50%);
-    pointer-events: none;
 }
 
 .brilliance-content {
@@ -3555,22 +3529,9 @@ h2,
 
 /* Dashboard Power Section */
 .dashboard-power {
-    padding: 120px 0;
-    background: linear-gradient(135deg, #000000 0%, #100a1a 30%, #1a0f2a 50%, #100a1a 70%, #000000 100%);
+    padding: 80px 0 80px 0;
+    background: transparent;
     position: relative;
-}
-
-.dashboard-power::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-        radial-gradient(ellipse at top left, rgba(138, 43, 226, 0.04) 0%, transparent 50%),
-        radial-gradient(ellipse at bottom right, rgba(147, 112, 219, 0.03) 0%, transparent 50%);
-    pointer-events: none;
 }
 
 .power-content {
