@@ -2930,11 +2930,11 @@ h2,
 }
 
 .brilliance-fact {
-    border-left: 3px solid rgba(255, 127, 80, 0.6);
+    border-left: 3px solid #bf40ff;
 }
 
 .power-fact {
-    border-left: 3px solid rgba(255, 193, 7, 0.6);
+    border-left: 3px solid #bf40ff;
 }
 
 .brilliance-fact strong {
@@ -4728,7 +4728,7 @@ h2,
 /* Call Handling Section */
 .call-handling {
     padding: 80px 0;
-    background: linear-gradient(135deg, #000000 0%, #080505 30%, #101010 50%, #080505 70%, #000000 100%);
+    background: #000000;
     position: relative;
     overflow: hidden;
 }
@@ -4736,15 +4736,31 @@ h2,
 .call-handling::before {
     content: '';
     position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 127, 80, 0.6) 0%, rgba(255, 127, 80, 0.25) 50%, transparent 100%);
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+.call-handling::after {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-        radial-gradient(ellipse at bottom left, rgba(255, 127, 80, 0.10) 0%, transparent 60%),
-        radial-gradient(ellipse at top right, rgba(255, 127, 80, 0.08) 0%, transparent 60%),
-        radial-gradient(circle at center, rgba(255, 127, 80, 0.05) 0%, transparent 40%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.01) 0%, rgba(255, 127, 80, 0.015) 25%, rgba(255, 255, 255, 0.005) 50%, rgba(255, 127, 80, 0.01) 75%, rgba(255, 255, 255, 0.008) 100%);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
     pointer-events: none;
+    z-index: 2;
 }
 
 .call-handling-title {
@@ -5724,14 +5740,15 @@ h2,
 /* Voice Technology Premium Section */
 .voice-technology-premium {
     padding: 120px 0 80px 0;
-    background: linear-gradient(135deg, #000000 0%, #100a1a 30%, #1a0f2a 50%, #100a1a 70%, #000000 100%);
+    background: #000000;
     position: relative;
+    overflow: hidden;
 }
 
 .voice-technology-premium .voice-showcase-content {
     margin-top: 160px;
     position: relative;
-    z-index: 1;
+    z-index: 10;
 }
 
 .voice-technology-premium .voice-showcase-content .section-title {
@@ -5767,14 +5784,30 @@ h2,
 .voice-technology-premium::before {
     content: '';
     position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.6) 0%, rgba(138, 43, 226, 0.25) 50%, transparent 100%);
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.voice-technology-premium::after {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-        radial-gradient(ellipse at top left, rgba(138, 43, 226, 0.04) 0%, transparent 50%),
-        radial-gradient(ellipse at bottom right, rgba(147, 112, 219, 0.03) 0%, transparent 50%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.01) 0%, rgba(138, 43, 226, 0.015) 25%, rgba(255, 255, 255, 0.005) 50%, rgba(147, 112, 219, 0.01) 75%, rgba(255, 255, 255, 0.008) 100%);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
     pointer-events: none;
+    z-index: 2;
 }
 
 @keyframes backgroundPulse {
@@ -5786,14 +5819,14 @@ h2,
     text-align: center;
     margin-bottom: 80px;
     position: relative;
-    z-index: 2;
+    z-index: 10;
 }
 
 .voice-tech-title {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
     font-size: 48px;
     font-weight: 800;
-    background: linear-gradient(135deg, #ffffff 0%, rgba(138, 43, 226, 0.7) 100%);
+    background: linear-gradient(90deg, #ffffff 0%, #ffffff 50%, rgba(138, 43, 226, 0.8) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
