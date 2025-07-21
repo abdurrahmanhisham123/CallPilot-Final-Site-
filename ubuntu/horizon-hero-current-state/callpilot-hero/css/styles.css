@@ -277,11 +277,11 @@ body {
 .hero::before {
     content: '';
     position: absolute;
-    top: 10%;
+    top: 5%;
     left: -40%;
     z-index: 1;
-    width: 1050px;
-    height: 900px;
+    width: 800px;
+    height: 700px;
     background: radial-gradient(circle, rgba(138, 43, 226, 0.6) 0%, rgba(138, 43, 226, 0.25) 50%, transparent 100%);
     border-radius: 50%;
     pointer-events: none;
@@ -292,11 +292,11 @@ body {
 .hero::after {
     content: '';
     position: absolute;
-    top: 10%;
+    top: 5%;
     right: -30%;
     z-index: 1;
-    width: 1050px;
-    height: 900px;
+    width: 800px;
+    height: 700px;
     background: radial-gradient(circle, rgba(138, 43, 226, 0.6) 0%, rgba(138, 43, 226, 0.25) 50%, transparent 100%);
     border-radius: 50%;
     pointer-events: none;
@@ -2725,7 +2725,7 @@ h2,
 .progress-fill {
     width: 94%;
     height: 100%;
-    background: linear-gradient(90deg, rgba(255, 127, 80, 0.8), rgba(255, 99, 71, 0.9));
+    background: linear-gradient(90deg, rgba(138, 43, 226, 0.8), rgba(147, 112, 219, 0.9));
     border-radius: 2px;
     position: relative;
     transition: width 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -2741,6 +2741,11 @@ h2,
     background: rgba(255, 255, 255, 0.3);
     border-radius: 0 2px 2px 0;
     animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Specific styling for Emerging Frontiers card progress bar */
+.emerging-frontiers-card .progress-fill {
+    background: linear-gradient(90deg, rgba(138, 43, 226, 0.8), rgba(147, 112, 219, 0.9)) !important;
 }
 
 @keyframes shimmer {
