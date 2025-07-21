@@ -277,50 +277,33 @@ body {
 .hero::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 10%;
+    left: -40%;
     z-index: 1;
-    width: 800px;
-    height: 700px;
-    background: radial-gradient(circle, rgba(138, 43, 226, 0.5) 0%, transparent 70%);
+    width: 1050px;
+    height: 900px;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.6) 0%, rgba(138, 43, 226, 0.25) 50%, transparent 100%);
     border-radius: 50%;
-    animation: snakeMove 18s linear infinite;
     pointer-events: none;
-    transform: translate(-50%, -50%);
+    filter: blur(80px);
 }
+
 
 .hero::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-    backdrop-filter: blur(80px);
-    -webkit-backdrop-filter: blur(80px);
-    background: rgba(0, 0, 0, 0.2);
+    top: 10%;
+    right: -30%;
+    z-index: 1;
+    width: 1050px;
+    height: 900px;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.6) 0%, rgba(138, 43, 226, 0.25) 50%, transparent 100%);
+    border-radius: 50%;
     pointer-events: none;
+    filter: blur(80px);
 }
 
 
-@keyframes snakeMove {
-    0% {
-        transform: translate(-50%, -30%);
-    }
-    25% {
-        transform: translate(-30%, -50%);
-    }
-    50% {
-        transform: translate(-50%, -70%);
-    }
-    75% {
-        transform: translate(-70%, -50%);
-    }
-    100% {
-        transform: translate(-50%, -30%);
-    }
-}
 
 
 /* Animated Background */
