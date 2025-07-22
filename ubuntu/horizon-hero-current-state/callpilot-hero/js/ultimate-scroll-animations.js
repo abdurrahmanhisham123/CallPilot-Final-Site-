@@ -182,6 +182,16 @@ document.addEventListener('DOMContentLoaded', function() {
         { selector: '.dashboard-grid', animation: 'smoothSlideLeft', baseDelay: 200 }
     ];
     
+    // 🚫 SECTIONS TO EXCLUDE FROM BACKGROUND CIRCLE ANIMATIONS 🚫
+    const excludedBackgroundSections = [
+        '.voice-technology-premium',
+        '.call-handling', 
+        '.plans-section',
+        '.new-section',
+        '.discovery-planning',
+        '.faq-section'
+    ];
+    
     let totalElements = 0;
     
     // Apply premium animations to all cards
@@ -196,12 +206,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Premium animations for sections
+    // Premium animations for sections (EXCLUDING background circle sections)
     const sections = document.querySelectorAll('section');
     sections.forEach((section, index) => {
         if (section.id !== 'hero') {
-            addPremiumAnimation(section, 'elegantFadeUp', index * 100);
-            totalElements++;
+            // Check if this section should be excluded from background animations
+            const shouldExcludeBackground = excludedBackgroundSections.some(excludedClass => 
+                section.matches(excludedClass)
+            );
+            
+            if (!shouldExcludeBackground) {
+                addPremiumAnimation(section, 'elegantFadeUp', index * 100);
+                totalElements++;
+            } else {
+                console.log(`🚫 Excluding background animations for section:`, section.className);
+            }
         }
     });
     
@@ -506,8 +525,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const premiumObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Perfect timing: animate when 20% of element is visible
-                if (entry.intersectionRatio >= 0.2) {
+                // Immediate trigger: animate as soon as 10% is visible
+                if (entry.intersectionRatio >= 0.1) {
                     executeAnimation(entry.target);
                     premiumObserver.unobserve(entry.target);
                 }
@@ -515,23 +534,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, {
         threshold: [0.1, 0.2, 0.3], // Multiple thresholds for precision
-        rootMargin: '50px 0px -50px 0px' // Perfect timing window
+        rootMargin: '200px 0px -100px 0px' // Much earlier trigger for immediate visibility
     });
     
     // Special observer for call handling section (perfect reading timing)
     const callHandlingObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
-                // Perfect timing for reading
-                setTimeout(() => {
-                    executeAnimation(entry.target);
-                }, 200); // Small delay to settle the scroll
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.1) {
+                // Immediate trigger for reading sections too
+                executeAnimation(entry.target);
                 callHandlingObserver.unobserve(entry.target);
             }
         });
     }, {
-        threshold: [0.3, 0.5], // Trigger when well into view for reading
-        rootMargin: '0px 0px -20% 0px' // More conservative timing for reading
+        threshold: [0.1, 0.3], // Trigger earlier for immediate visibility
+        rootMargin: '150px 0px -50px 0px' // Earlier trigger for reading sections too
     });
     
     // Observe all animated elements

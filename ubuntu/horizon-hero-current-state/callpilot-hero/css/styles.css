@@ -8652,16 +8652,7 @@ h2,
 }
 
 .plans-section .glass-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: transparent;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    pointer-events: none;
-    z-index: 2;
+    display: none;
 }
 .plans-section .apple-glass-card {
     position: relative;

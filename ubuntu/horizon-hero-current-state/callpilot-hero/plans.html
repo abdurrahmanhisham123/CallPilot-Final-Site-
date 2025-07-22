@@ -105,9 +105,13 @@
 
     <main>
         <!-- Plans Section -->
-        <section id="plans" class="plans-section" style="padding-top: 180px; background: linear-gradient(135deg, #000000 0%, #100a1a 30%, #1a0f2a 50%, #100a1a 70%, #000000 100%) !important; position: relative;">
-            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at top left, rgba(138, 43, 226, 0.04) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(147, 112, 219, 0.03) 0%, transparent 50%); pointer-events: none; z-index: 1;"></div>
-            <div class="container">
+        <section id="plans" class="plans-section" style="padding-top: 180px; background: #000000 !important; position: relative;">
+            <!-- Layer 1: Purple Circles (behind each pricing card) -->
+            
+            <!-- Layer 2: Glass Effect (on top of circles) -->
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 0; pointer-events: none; z-index: 2;"></div>
+            <!-- Layer 3: Content (on top of glass effect) -->
+            <div class="container" style="position: relative; z-index: 3;">
                 <div class="section-header">
                     <h2 class="plans-title" style="font-family: 'Open Sans', sans-serif; color: #ffffff !important;">ROI-Centered Investments</h2>
                     <p class="plans-description">Eliminate complexity while focusing on intelligent investment solutions that deliver transparent returns and sustainable profit optimization</p>
@@ -203,6 +207,199 @@
                             <button class="explore-features-btn" onclick="window.open('#', '_blank')">
                                 Explore Features
                             </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plans Comparison Section -->
+        <section class="plans-comparison-section" style="background: #000000; padding: 120px 0; position: relative;">
+            <!-- Layer 1: Purple Circle (on black background) -->
+            <div style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); width: 700px; height: 700px; background: radial-gradient(circle, rgba(138, 43, 226, 0.4) 0%, rgba(138, 43, 226, 0.2) 50%, transparent 100%); border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 1;"></div>
+            
+            <!-- Layer 2: Glass Effect (on top of circle) -->
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); pointer-events: none; z-index: 2;"></div>
+            
+            <!-- Layer 3: Content (on top of glass effect) -->
+            <div class="container" style="position: relative; z-index: 3;">
+                <div class="section-header" style="text-align: center; margin-bottom: 80px;">
+                    <h2 style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif; font-size: 48px; font-weight: 700; color: #ffffff; margin-bottom: 20px;">CallPilot V1 Comparison</h2>
+                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 18px; color: #cccccc; max-width: 600px; margin: 0 auto;">Compare features and capabilities across all plans to find the perfect fit for your business needs</p>
+                </div>
+
+                <div class="comparison-table" style="background: transparent; border: none; border-radius: 24px; overflow: hidden; backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px);">
+                    <!-- Table Header -->
+                    <div class="comparison-header" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 30px; background: transparent; border: none; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+                        <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-weight: 600; color: #ffffff; font-size: 18px;"></div>
+                        <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-weight: 600; color: #ffffff; font-size: 18px; text-align: center;">Special Plan</div>
+                        <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-weight: 600; color: #ffffff; font-size: 18px; text-align: center;">Premium Plan</div>
+                        <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-weight: 600; color: #ffffff; font-size: 18px; text-align: center;">Enterprise Plan</div>
+                    </div>
+
+                    <!-- CAPABILITY Section -->
+                    <div class="capability-section">
+                        <div class="section-title" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 25px 30px; background: transparent; border: none; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);">
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-weight: 700; color: rgba(138, 43, 226, 0.9); font-size: 16px; text-transform: uppercase; letter-spacing: 0.5px;">CAPABILITY</div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+
+                        <!-- SMS Capabilities -->
+                        <div class="feature-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 20px 30px; border: none;">
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; color: #ffffff; font-size: 15px;">SMS Capabilities</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                        </div>
+
+                        <!-- Email Integration -->
+                        <div class="feature-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 20px 30px; border: none;">
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; color: #ffffff; font-size: 15px;">Email Integration</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                        </div>
+
+                        <!-- CRM Integration -->
+                        <div class="feature-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 20px 30px; border: none;">
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; color: #ffffff; font-size: 15px;">CRM Integration</div>
+                            <div style="text-align: center; color: #ef4444; font-size: 20px;">×</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                        </div>
+
+                        <!-- Voice Cloning -->
+                        <div class="feature-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 20px 30px; border: none;">
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; color: #ffffff; font-size: 15px;">Voice Cloning</div>
+                            <div style="text-align: center; color: #ef4444; font-size: 20px;">×</div>
+                            <div style="text-align: center; color: #ef4444; font-size: 20px;">×</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                        </div>
+
+                        <!-- 2+ Numbers -->
+                        <div class="feature-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 20px 30px; border: none;">
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; color: #ffffff; font-size: 15px;">2+ Numbers</div>
+                            <div style="text-align: center; color: #ef4444; font-size: 20px;">×</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                        </div>
+
+                        <!-- 2+ Facilitators -->
+                        <div class="feature-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 20px 30px; border: none;">
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; color: #ffffff; font-size: 15px;">2+ Facilitators</div>
+                            <div style="text-align: center; color: #ef4444; font-size: 20px;">×</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                        </div>
+
+                        <!-- 1+ Abilities -->
+                        <div class="feature-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 20px 30px; border: none;">
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; color: #ffffff; font-size: 15px;">1+ Abilities</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                        </div>
+
+                        <!-- Google Calendar Integration -->
+                        <div class="feature-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 20px 30px; border: none;">
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; color: #ffffff; font-size: 15px;">Google Calendar Integration</div>
+                            <div style="text-align: center; color: #ef4444; font-size: 20px;">×</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                        </div>
+
+                        <!-- Form Integration -->
+                        <div class="feature-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 20px 30px; border: none;">
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; color: #ffffff; font-size: 15px;">Form Integration</div>
+                            <div style="text-align: center; color: #ef4444; font-size: 20px;">×</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                        </div>
+
+                        <!-- Custom HTML Emails -->
+                        <div class="feature-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 20px 30px; border: none;">
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; color: #ffffff; font-size: 15px;">Custom HTML Emails</div>
+                            <div style="text-align: center; color: #ef4444; font-size: 20px;">×</div>
+                            <div style="text-align: center; color: #ef4444; font-size: 20px;">×</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                        </div>
+
+                        <!-- Call Analytics -->
+                        <div class="feature-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 20px 30px; border: none;">
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; color: #ffffff; font-size: 15px;">Call Analytics</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                        </div>
+                    </div>
+
+                    <!-- USAGE Section -->
+                    <div class="usage-section">
+                        <div class="section-title" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 25px 30px; background: transparent; border: none; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);">
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-weight: 700; color: rgba(138, 43, 226, 0.9); font-size: 16px; text-transform: uppercase; letter-spacing: 0.5px;">USAGE</div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+
+                        <!-- Free Minutes Per Month -->
+                        <div class="feature-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 20px 30px; border: none;">
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; color: #ffffff; font-size: 15px;">Free Minutes Per Month</div>
+                            <div style="text-align: center; color: #ffffff; font-size: 14px;">500</div>
+                            <div style="text-align: center; color: #ffffff; font-size: 14px;">2,000</div>
+                            <div style="text-align: center; color: #ffffff; font-size: 14px;">Unlimited</div>
+                        </div>
+
+                        <!-- Overages Allowed -->
+                        <div class="feature-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 20px 30px; border: none;">
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; color: #ffffff; font-size: 15px;">Overages Allowed</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                        </div>
+
+                        <!-- Primary Support -->
+                        <div class="feature-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 20px 30px; border: none;">
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; color: #ffffff; font-size: 15px;">Primary Support</div>
+                            <div style="text-align: center; color: #ffffff; font-size: 14px;">Email</div>
+                            <div style="text-align: center; color: #ffffff; font-size: 14px;">Email + Chat</div>
+                            <div style="text-align: center; color: #ffffff; font-size: 14px;">Priority Phone</div>
+                        </div>
+                    </div>
+
+                    <!-- INCLUDED Section -->
+                    <div class="included-section">
+                        <div class="section-title" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 25px 30px; background: transparent; border: none; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);">
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-weight: 700; color: rgba(138, 43, 226, 0.9); font-size: 16px; text-transform: uppercase; letter-spacing: 0.5px;">INCLUDED</div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+
+                        <!-- Login Access -->
+                        <div class="feature-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 20px 30px; border: none;">
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; color: #ffffff; font-size: 15px;">Login Access</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                        </div>
+
+                        <!-- Configurable Login Access -->
+                        <div class="feature-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 20px 30px; border: none;">
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; color: #ffffff; font-size: 15px;">Configurable Login Access</div>
+                            <div style="text-align: center; color: #ef4444; font-size: 20px;">×</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                        </div>
+
+                        <!-- 2 Way Channel -->
+                        <div class="feature-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; padding: 20px 30px;">
+                            <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; color: #ffffff; font-size: 15px;">2 Way Channel</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
+                            <div style="text-align: center; color: #10b981; font-size: 20px;">✓</div>
                         </div>
                     </div>
                 </div>
