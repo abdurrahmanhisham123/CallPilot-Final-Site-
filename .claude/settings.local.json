@@ -4,7 +4,9 @@
       "Bash(python3:*)",
       "Bash(lsof:*)",
       "Bash(grep:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(ls:*)",
+      "Bash(open index.html)"
     ],
     "deny": []
   }

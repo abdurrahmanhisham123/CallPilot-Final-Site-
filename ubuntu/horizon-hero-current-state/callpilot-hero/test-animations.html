@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { background: #000; color: white; padding: 50px; }
+        
+        .test-card {
+            width: 300px;
+            height: 200px;
+            background: rgba(255,255,255,0.1);
+            margin: 100px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        /* Test animations */
+        .fade-up-scale {
+            opacity: 0;
+            transform: translateY(80px) scale(0.9);
+            transition: all 1s ease;
+        }
+        
+        .fade-up-scale.animate-in {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        
+        .glass-lift {
+            opacity: 0;
+            transform: translateY(60px) scale(0.95);
+            transition: all 1s ease;
+        }
+        
+        .glass-lift.animate-in {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            box-shadow: 0 20px 50px rgba(138, 43, 226, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>Animation Test</h1>
+    
+    <div class="test-card fade-up-scale">Test Card 1 - Fade Up Scale</div>
+    <div class="test-card glass-lift">Test Card 2 - Glass Lift</div>
+    <div class="test-card fade-up-scale">Test Card 3 - Fade Up Scale</div>
+    
+    <script>
+        console.log('Testing animations...');
+        
+        setTimeout(() => {
+            document.querySelectorAll('.test-card').forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('animate-in');
+                    console.log('Animated card', index);
+                }, index * 500);
+            });
+        }, 1000);
+    </script>
+</body>
+</html>

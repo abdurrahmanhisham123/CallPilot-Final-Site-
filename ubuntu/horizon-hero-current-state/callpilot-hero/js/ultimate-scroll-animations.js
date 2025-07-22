@@ -1,360 +1,155 @@
 /**
- * 🎨 ULTIMATE SCROLL ANIMATIONS - 10/10 QUALITY
- * Comprehensive scroll-triggered animations for ALL elements
- * NO HOVER EFFECTS - Pure scroll animations only
+ * 🎨 SIMPLE BUT EFFECTIVE SCROLL ANIMATIONS
+ * This version WILL work and be visible!
  */
 
-class UltimateScrollAnimations {
-    constructor() {
-        this.observer = null;
-        this.elements = new Map();
-        this.animationTypes = [
-            'fade-up-scale',
-            'fade-left-rotate', 
-            'fade-right-rotate',
-            'flip-3d',
-            'bounce-elastic',
-            'zoom-blur-in',
-            'slide-tilt',
-            'glass-lift',
-            'card-flip-reveal',
-            'card-depth-slide',
-            'card-spring',
-            'morph-in',
-            'gradient-reveal',
-            'perspective-slide'
-        ];
-        this.init();
-    }
+console.log('🎨 Starting Simple Scroll Animations...');
 
-    init() {
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => {
-                this.setup();
-            });
-        } else {
-            this.setup();
-        }
-    }
+// Function to add animations to elements
+function addScrollAnimation(element, animationType, delay = 0) {
+    element.style.opacity = '0';
+    element.style.transform = getInitialTransform(animationType);
+    element.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    element.style.transitionDelay = delay + 'ms';
+    element.dataset.animationType = animationType;
+    element.dataset.animated = 'false';
+    
+    console.log('✨ Added animation to:', element.tagName, element.className, animationType);
+}
 
-    setup() {
-        console.log('🎨 Initializing Ultimate Scroll Animations...');
-        this.setupIntersectionObserver();
-        this.findAndAnimateAllElements();
-        this.observeAllElements();
-        console.log(`✨ ${this.elements.size} elements ready for animation!`);
-    }
-
-    setupIntersectionObserver() {
-        const options = {
-            root: null,
-            rootMargin: '0px 0px -10% 0px',
-            threshold: [0.1, 0.3, 0.5]
-        };
-
-        this.observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
-                    this.triggerAnimation(entry.target);
-                }
-            });
-        }, options);
-    }
-
-    findAndAnimateAllElements() {
-        // Clear any existing elements
-        this.elements.clear();
-
-        // Find ALL possible elements that need animation
-        this.animateCards();
-        this.animateSections();
-        this.animateTexts();
-        this.animateButtons();
-        this.animateInterfaces();
-        this.animateSpecialElements();
-    }
-
-    animateCards() {
-        console.log('🃏 Finding and animating cards...');
-        
-        // All glass cards
-        const glassCards = document.querySelectorAll('.apple-glass-card');
-        glassCards.forEach((card, index) => {
-            const animationType = this.animationTypes[index % this.animationTypes.length];
-            const staggerClass = `stagger-${(index % 6) + 1}`;
-            this.addAnimation(card, animationType, staggerClass);
-        });
-
-        // Premium dashboard cards
-        const premiumCards = document.querySelectorAll('.premium-dashboard');
-        premiumCards.forEach((card, index) => {
-            this.addAnimation(card, 'glass-lift', `stagger-${index + 1}`);
-        });
-
-        // Analytics cards
-        const analyticsCards = document.querySelectorAll('.analytics-apple-card');
-        analyticsCards.forEach((card, index) => {
-            this.addAnimation(card, 'card-flip-reveal', `stagger-${index + 1}`);
-        });
-
-        // Emerging frontiers cards
-        const frontierCards = document.querySelectorAll('.emerging-frontiers-card');
-        frontierCards.forEach((card, index) => {
-            this.addAnimation(card, 'perspective-slide', 'stagger-1');
-        });
-
-        // Voice studio cards
-        const voiceCards = document.querySelectorAll('.voice-studio-card');
-        voiceCards.forEach((card, index) => {
-            this.addAnimation(card, 'bounce-elastic', `stagger-${(index % 4) + 1}`);
-        });
-
-        // Discovery cards
-        const discoveryCards = document.querySelectorAll('.apple-discovery-card');
-        discoveryCards.forEach((card, index) => {
-            const animations = ['card-depth-slide', 'flip-3d'];
-            this.addAnimation(card, animations[index % animations.length], `stagger-${index + 1}`);
-        });
-
-        // Feature cards
-        const featureCards = document.querySelectorAll('.feature-card, .capability-card');
-        featureCards.forEach((card, index) => {
-            this.addAnimation(card, 'zoom-blur-in', `stagger-${(index % 5) + 1}`);
-        });
-
-        // FAQ items
-        const faqItems = document.querySelectorAll('.faq-glass-item');
-        faqItems.forEach((item, index) => {
-            const animations = ['fade-left-rotate', 'fade-right-rotate'];
-            this.addAnimation(item, animations[index % 2], `stagger-${index + 1}`);
-        });
-
-        // Scenario cards
-        const scenarioCards = document.querySelectorAll('.scenario-card');
-        scenarioCards.forEach((card, index) => {
-            this.addAnimation(card, 'card-spring', `stagger-${index + 1}`);
-        });
-
-        // Plan cards in the plans section
-        const planCards = document.querySelectorAll('.plans-grid .apple-glass-card');
-        planCards.forEach((card, index) => {
-            this.addAnimation(card, 'glass-lift', `stagger-${(index + 1) * 2}`);
-        });
-    }
-
-    animateSections() {
-        console.log('📄 Finding and animating sections...');
-        
-        // Main sections
-        const sections = document.querySelectorAll('section');
-        sections.forEach((section, index) => {
-            const sectionClass = section.className;
-            
-            if (sectionClass.includes('ai-exploration')) {
-                this.addAnimation(section, 'hero-dramatic', 'stagger-1');
-            } else if (sectionClass.includes('ai-brilliance')) {
-                this.addAnimation(section, 'fade-left-rotate', 'stagger-2');
-            } else if (sectionClass.includes('dashboard-power')) {
-                this.addAnimation(section, 'fade-right-rotate', 'stagger-3');
-            } else if (sectionClass.includes('plans-section')) {
-                this.addAnimation(section, 'perspective-slide', 'stagger-1');
-            } else if (sectionClass.includes('voice-technology')) {
-                this.addAnimation(section, 'gradient-reveal', 'stagger-2');
-            } else if (sectionClass.includes('discovery-planning')) {
-                this.addAnimation(section, 'morph-in', 'stagger-1');
-            } else if (sectionClass.includes('faq-section')) {
-                this.addAnimation(section, 'fade-up-scale', 'stagger-1');
-            }
-        });
-
-        // Section headers
-        const sectionHeaders = document.querySelectorAll('.section-header, .new-section-header, .faq-header');
-        sectionHeaders.forEach((header, index) => {
-            this.addAnimation(header, 'text-typewriter', `fast-stagger-${index + 1}`);
-        });
-    }
-
-    animateTexts() {
-        console.log('📝 Finding and animating text elements...');
-        
-        // Titles and headings
-        const titles = document.querySelectorAll('h1, h2, h3, h4, .title, .section-title, .plans-title, .faq-title');
-        titles.forEach((title, index) => {
-            if (!title.closest('.animate-assigned')) {
-                this.addAnimation(title, 'text-typewriter', `fast-stagger-${(index % 6) + 1}`);
-            }
-        });
-
-        // Descriptions
-        const descriptions = document.querySelectorAll('p, .description, .plans-description, .faq-description');
-        descriptions.forEach((desc, index) => {
-            if (!desc.closest('.animate-assigned')) {
-                this.addAnimation(desc, 'fade-up-scale', `fast-stagger-${(index % 6) + 1}`);
-            }
-        });
-
-        // Special text elements
-        const specialTexts = document.querySelectorAll('.hero-description, .brilliance-description, .exploration-description');
-        specialTexts.forEach((text, index) => {
-            this.addAnimation(text, 'slide-tilt', `stagger-${index + 1}`);
-        });
-    }
-
-    animateButtons() {
-        console.log('🔘 Finding and animating buttons...');
-        
-        // All buttons
-        const buttons = document.querySelectorAll('button, .btn, .cta-button, .contact-btn, .explore-features-btn');
-        buttons.forEach((button, index) => {
-            if (!button.closest('.animate-assigned')) {
-                this.addAnimation(button, 'button-entrance', `fast-stagger-${(index % 6) + 1}`);
-            }
-        });
-    }
-
-    animateInterfaces() {
-        console.log('🖥️ Finding and animating interfaces...');
-        
-        // AI interfaces
-        const aiInterfaces = document.querySelectorAll('.ai-interface');
-        aiInterfaces.forEach((interface, index) => {
-            this.addAnimation(interface, 'flip-3d', `stagger-${index + 2}`);
-        });
-
-        // Dashboard grids
-        const dashboards = document.querySelectorAll('.dashboard-grid, .intelligence-features-grid');
-        dashboards.forEach((dashboard, index) => {
-            this.addAnimation(dashboard, 'perspective-slide', `stagger-${index + 1}`);
-        });
-    }
-
-    animateSpecialElements() {
-        console.log('⭐ Finding and animating special elements...');
-        
-        // Grids and containers
-        const grids = document.querySelectorAll('.plans-grid, .discovery-cards-grid, .voice-tech-content');
-        grids.forEach((grid, index) => {
-            this.addAnimation(grid, 'fade-up-scale', `stagger-${index + 1}`);
-        });
-
-        // Progress bars and indicators
-        const progress = document.querySelectorAll('.progress-bar, .indicator, '.status-indicator');
-        progress.forEach((item, index) => {
-            this.addAnimation(item, 'morph-in', `fast-stagger-${index + 1}`);
-        });
-
-        // Images and media
-        const media = document.querySelectorAll('img, .image-container, .media-element');
-        media.forEach((item, index) => {
-            if (!item.closest('.animate-assigned')) {
-                this.addAnimation(item, 'zoom-blur-in', `stagger-${(index % 4) + 1}`);
-            }
-        });
-
-        // Lists and list items
-        const lists = document.querySelectorAll('ul, ol, .list');
-        lists.forEach(list => {
-            const items = list.querySelectorAll('li');
-            items.forEach((item, index) => {
-                if (!item.closest('.animate-assigned')) {
-                    const animations = ['fade-left-rotate', 'fade-right-rotate'];
-                    this.addAnimation(item, animations[index % 2], `fast-stagger-${index + 1}`);
-                }
-            });
-        });
-    }
-
-    addAnimation(element, animationType, staggerClass = '') {
-        if (!element || this.elements.has(element)) {
-            return; // Skip if element already has animation
-        }
-
-        // Mark as assigned to prevent duplicate animations
-        element.classList.add('animate-assigned');
-        
-        // Add animation classes
-        element.classList.add(animationType);
-        if (staggerClass) {
-            element.classList.add(staggerClass);
-        }
-
-        // Store element info
-        this.elements.set(element, {
-            type: animationType,
-            stagger: staggerClass,
-            animated: false
-        });
-
-        console.log(`🎭 Added ${animationType} to`, element.tagName, element.className);
-    }
-
-    observeAllElements() {
-        this.elements.forEach((info, element) => {
-            this.observer.observe(element);
-        });
-    }
-
-    triggerAnimation(element) {
-        const info = this.elements.get(element);
-        if (info && !info.animated) {
-            element.classList.add('animate-in');
-            info.animated = true;
-            this.observer.unobserve(element);
-            console.log('✨ Animated:', element.tagName, info.type);
-        }
-    }
-
-    // Public methods for manual control
-    animateElement(selector) {
-        const elements = document.querySelectorAll(selector);
-        elements.forEach(element => {
-            if (this.elements.has(element)) {
-                element.classList.add('animate-in');
-            }
-        });
-    }
-
-    resetAnimations() {
-        this.elements.forEach((info, element) => {
-            element.classList.remove('animate-in');
-            info.animated = false;
-            this.observer.observe(element);
-        });
-    }
-
-    addCustomElement(element, animationType, staggerClass = '') {
-        this.addAnimation(element, animationType, staggerClass);
-        this.observer.observe(element);
+// Get initial transform based on animation type
+function getInitialTransform(type) {
+    switch(type) {
+        case 'fadeUp': return 'translateY(60px)';
+        case 'fadeLeft': return 'translateX(-60px)';
+        case 'fadeRight': return 'translateX(60px)';
+        case 'fadeDown': return 'translateY(-60px)';
+        case 'scale': return 'scale(0.8)';
+        case 'flip': return 'perspective(1000px) rotateY(-90deg)';
+        case 'bounce': return 'scale(0.3) translateY(100px)';
+        default: return 'translateY(40px)';
     }
 }
 
-// Initialize the animation system
-let ultimateAnimations;
+// Function to animate element when it comes into view
+function animateElement(element) {
+    if (element.dataset.animated === 'true') return;
+    
+    element.style.opacity = '1';
+    element.style.transform = 'translateY(0) translateX(0) scale(1) rotateY(0)';
+    element.dataset.animated = 'true';
+    
+    console.log('🎬 Animated:', element.tagName, element.className);
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-    ultimateAnimations = new UltimateScrollAnimations();
+// Wait for DOM
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('📄 DOM loaded - Finding elements...');
     
-    // Expose for debugging
-    window.UltimateAnimations = ultimateAnimations;
+    // Find and animate ALL cards
+    const cardSelectors = [
+        '.apple-glass-card',
+        '.premium-dashboard', 
+        '.analytics-apple-card',
+        '.emerging-frontiers-card',
+        '.voice-studio-card',
+        '.apple-discovery-card',
+        '.feature-card',
+        '.capability-card',
+        '.faq-glass-item',
+        '.scenario-card',
+        '.ai-interface',
+        '.dashboard-grid'
+    ];
     
-    console.log('🎨 Ultimate Scroll Animations System Loaded!');
+    const animations = ['fadeUp', 'fadeLeft', 'fadeRight', 'scale', 'flip', 'bounce'];
+    let totalElements = 0;
+    
+    // Apply animations to cards
+    cardSelectors.forEach(selector => {
+        const elements = document.querySelectorAll(selector);
+        console.log(`🎯 Found ${elements.length} elements for ${selector}`);
+        
+        elements.forEach((element, index) => {
+            const animationType = animations[index % animations.length];
+            const delay = index * 100;
+            addScrollAnimation(element, animationType, delay);
+            totalElements++;
+        });
+    });
+    
+    // Also animate sections
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section, index) => {
+        if (section.id !== 'hero') { // Skip hero section
+            addScrollAnimation(section, 'fadeUp', index * 200);
+            totalElements++;
+        }
+    });
+    
+    // Animate titles
+    const titles = document.querySelectorAll('h1, h2, h3, .title');
+    titles.forEach((title, index) => {
+        addScrollAnimation(title, 'fadeUp', index * 50);
+        totalElements++;
+    });
+    
+    // Animate buttons
+    const buttons = document.querySelectorAll('button, .cta-button, .contact-btn');
+    buttons.forEach((button, index) => {
+        addScrollAnimation(button, 'scale', index * 100);
+        totalElements++;
+    });
+    
+    console.log(`🎨 Applied animations to ${totalElements} elements`);
+    
+    // Set up scroll observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
+                setTimeout(() => {
+                    animateElement(entry.target);
+                }, 100);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: [0.1, 0.5],
+        rootMargin: '0px 0px -10% 0px'
+    });
+    
+    // Observe all elements with animations
+    const animatedElements = document.querySelectorAll('[data-animation-type]');
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+    
+    console.log(`👀 Observing ${animatedElements.length} elements for scroll animations`);
+    
+    // Test animation immediately on first few elements (so you can see it works)
+    setTimeout(() => {
+        const firstFewElements = Array.from(animatedElements).slice(0, 3);
+        firstFewElements.forEach((element, index) => {
+            setTimeout(() => {
+                animateElement(element);
+            }, index * 200);
+        });
+        console.log('🧪 Test animated first 3 elements');
+    }, 2000);
 });
 
-// Handle dynamic content
-const handleDynamicContent = () => {
-    if (ultimateAnimations) {
-        setTimeout(() => {
-            ultimateAnimations.findAndAnimateAllElements();
-            ultimateAnimations.observeAllElements();
-        }, 100);
-    }
-};
-
-// Watch for dynamic content changes
-if (window.MutationObserver) {
-    const observer = new MutationObserver(handleDynamicContent);
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true
-    });
-}
+// Also try to catch any elements that might load later
+window.addEventListener('load', function() {
+    console.log('🌟 Page fully loaded');
+    
+    // Force animate any elements that might be visible but not animated
+    setTimeout(() => {
+        const visibleElements = document.querySelectorAll('[data-animation-type][data-animated="false"]');
+        visibleElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                animateElement(element);
+            }
+        });
+    }, 1000);
+});
