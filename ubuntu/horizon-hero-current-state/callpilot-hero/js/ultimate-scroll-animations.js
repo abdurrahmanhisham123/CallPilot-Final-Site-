@@ -189,7 +189,8 @@ document.addEventListener('DOMContentLoaded', function() {
         '.plans-section',
         '.new-section',
         '.discovery-planning',
-        '.faq-section'
+        '.faq-section',
+        'footer'
     ];
     
     let totalElements = 0;
@@ -235,8 +236,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const isInDiscoveryCard = title.closest('.apple-discovery-card');
         const isInFaqCard = title.closest('.faq-glass-item');
         const isInFaqCta = title.closest('.faq-cta');
+        const isInFooter = title.closest('footer');
         
-        if (!isInCallCard && !isInPricingCard && !isInIntelligenceCard && !isInDiscoveryCard && !isInFaqCard && !isInFaqCta) {
+        if (!isInCallCard && !isInPricingCard && !isInIntelligenceCard && !isInDiscoveryCard && !isInFaqCard && !isInFaqCta && !isInFooter) {
             // Special fast timing for main section titles
             const isSectionTitle = title.classList.contains('new-section-title') || 
                                  title.classList.contains('plans-title') || 
@@ -258,7 +260,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const isInDiscoveryCard = button.closest('.apple-discovery-card');
         const isInFaqCard = button.closest('.faq-glass-item');
         const isInFaqCta = button.closest('.faq-cta');
-        if (!isInPricingCard && !isInIntelligenceCard && !isInDiscoveryCard && !isInFaqCard && !isInFaqCta) {
+        const isInFooter = button.closest('footer');
+        if (!isInPricingCard && !isInIntelligenceCard && !isInDiscoveryCard && !isInFaqCard && !isInFaqCta && !isInFooter) {
             addPremiumAnimation(button, 'premiumScale', index * 120);
             totalElements++;
         }
@@ -275,7 +278,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const isInDiscoveryCard = text.closest('.apple-discovery-card');
             const isInFaqCard = text.closest('.faq-glass-item');
             const isInFaqCta = text.closest('.faq-cta');
-            if (!isInCallCard && !isInPricingCard && !isInIntelligenceCard && !isInDiscoveryCard && !isInFaqCard && !isInFaqCta) {
+            const isInFooter = text.closest('footer');
+            if (!isInCallCard && !isInPricingCard && !isInIntelligenceCard && !isInDiscoveryCard && !isInFaqCard && !isInFaqCta && !isInFooter) {
                 addPremiumAnimation(text, 'gentleFloat', index * 60);
                 totalElements++;
             }

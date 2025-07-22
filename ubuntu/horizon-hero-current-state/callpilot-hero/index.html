@@ -1636,92 +1636,52 @@
     </main>
     
     <!-- Footer Section -->
-    <footer id="contact" class="footer-enhanced">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="brand-logo">
-                        <span class="logo-text">HORIZON</span>
-                        <div class="logo-subtitle">AI Voice Intelligence</div>
+    <footer id="contact" style="background: #000000; padding: 80px 0 40px; position: relative; overflow: hidden;">
+        <!-- Layer 1: Purple Circle (on black background) -->
+        <div style="position: absolute; top: 95%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(138, 43, 226, 0.3) 0%, rgba(138, 43, 226, 0.15) 50%, transparent 100%); border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 1;"></div>
+        
+        <!-- Layer 2: Glass Effect (on top of circle) -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.01); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); pointer-events: none; z-index: 2;"></div>
+        
+        <!-- Layer 3: Content (on top of glass effect) -->
+        <div class="container" style="position: relative; z-index: 3;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px;">
+                <!-- Brand Section -->
+                <div>
+                    <div style="margin-bottom: 24px;">
+                        <span style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif; font-size: 28px; font-weight: 700; color: #ffffff; letter-spacing: -0.02em;">CallPilot</span>
+                        <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 14px; color: rgba(138, 43, 226, 0.8); font-weight: 500; margin-top: 4px;">AI Voice Intelligence</div>
                     </div>
-                    <p class="brand-description">
-                        Transforming business communication with cutting-edge AI voice technology. 
-                        24/7 intelligent conversations that drive results.
+                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.7); line-height: 1.5; margin: 0;">
+                        Transforming business communication with cutting-edge AI voice technology.
                     </p>
-                    <div class="footer-stats">
-                        <div class="stat-item">
-                            <span class="stat-value">500+</span>
-                            <span class="stat-label">Businesses</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">1M+</span>
-                            <span class="stat-label">Calls/Month</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">99.9%</span>
-                            <span class="stat-label">Uptime</span>
-                        </div>
-                    </div>
                 </div>
                 
-                <div class="footer-links">
-                    <h4>Platform</h4>
-                    <ul>
-                        <li><a href="#hero">Home</a></li>
-                        <li><a href="#ai-exploration">Features</a></li>
-                        <li><a href="#victory-solutions">Solutions</a></li>
-                        <li><a href="#voice-technology-premium">Voice Technology</a></li>
+                <!-- Links Section -->
+                <div>
+                    <h4 style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 16px; font-weight: 600; color: #ffffff; margin: 0 0 20px 0;">Platform</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 12px;"><a href="#hero" style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: color 0.2s;">Home</a></li>
+                        <li style="margin-bottom: 12px;"><a href="plans.html" style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: color 0.2s;">Plans</a></li>
+                        <li style="margin-bottom: 12px;"><a href="#ai-demo-call" style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: color 0.2s;">AI Demo</a></li>
+                        <li><a href="#contact" style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: color 0.2s;">Contact</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-links">
-                    <h4>Industries</h4>
-                    <ul>
-                        <li><a href="#analytics-dashboard-section">Analytics</a></li>
-                        <li><a href="#ai-capabilities">AI Capabilities</a></li>
-                        <li><a href="#trusted-leaders">Enterprise</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-cta">
-                    <h4>Ready to Get Started?</h4>
-                    <p>Experience the future of business communication today.</p>
-                    <div class="footer-buttons">
-                        <a href="#" class="footer-btn primary">Start Free Trial</a>
-                        <a href="#" class="footer-btn secondary">Book Demo</a>
-                    </div>
-                    <div class="footer-contact">
-                        <div class="contact-item">
-                            <span class="contact-icon">📧</span>
-                            <span>hello@horizonai.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">📞</span>
-                            <span>+1 (555) 123-4567</span>
-                        </div>
-                    </div>
+                <!-- Contact Section -->
+                <div>
+                    <h4 style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 16px; font-weight: 600; color: #ffffff; margin: 0 0 20px 0;">Get Started</h4>
+                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.7); margin: 0;">Experience the future of business communication.</p>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <div class="footer-copyright">
-                    <p>&copy; 2024 CallPilot AI. All rights reserved.</p>
-                </div>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Security</a>
-                </div>
-                <div class="footer-social">
-                    <a href="#" class="social-link">
-                        <span class="social-icon">🐦</span>
-                    </a>
-                    <a href="#" class="social-link">
-                        <span class="social-icon">💼</span>
-                    </a>
-                    <a href="#" class="social-link">
-                        <span class="social-icon">📘</span>
-                    </a>
+            <!-- Bottom Section -->
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 30px; display: flex; justify-content: space-between; align-items: center;">
+                <p style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.5); margin: 0;">&copy; 2024 CallPilot AI. All rights reserved.</p>
+                <div style="display: flex; gap: 30px;">
+                    <a href="#" style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.5); text-decoration: none; transition: color 0.2s;">Privacy</a>
+                    <a href="#" style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.5); text-decoration: none; transition: color 0.2s;">Terms</a>
+                    <a href="#" style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.5); text-decoration: none; transition: color 0.2s;">Security</a>
                 </div>
             </div>
         </div>
@@ -1729,6 +1689,9 @@
     
     <!-- 🎨 Ultimate Scroll Animations System -->
     <script src="js/ultimate-scroll-animations.js"></script>
+    
+    <!-- 🔥 Firebase Analytics -->
+    <script type="module" src="js/firebase-config.js"></script>
     
 </body>
 </html>

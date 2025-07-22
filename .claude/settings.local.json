@@ -6,7 +6,12 @@
       "Bash(grep:*)",
       "Bash(rm:*)",
       "Bash(ls:*)",
-      "Bash(open index.html)"
+      "Bash(open index.html)",
+      "Bash(firebase login:*)",
+      "Bash(firebase logout:*)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(firebase deploy:*)"
     ],
     "deny": []
   }
