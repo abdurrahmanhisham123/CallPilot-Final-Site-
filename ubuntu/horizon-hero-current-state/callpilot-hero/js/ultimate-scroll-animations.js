@@ -10,7 +10,7 @@ const ANIMATION_CONFIGS = {
     elegantFadeUp: {
         initial: 'translateY(80px) scale(0.95)',
         final: 'translateY(0) scale(1)',
-        duration: '1.2s',
+        duration: '0.5s',
         easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
         opacity: { from: 0, to: 1 }
     },
@@ -52,14 +52,14 @@ const ANIMATION_CONFIGS = {
     gentleFloat: {
         initial: 'translateY(60px) scale(0.9) rotate(-1deg)',
         final: 'translateY(0) scale(1) rotate(0deg)',
-        duration: '0.6s',
+        duration: '0.4s',
         easing: 'cubic-bezier(0.23, 1, 0.32, 1)',
         opacity: { from: 0, to: 1 }
     },
     modernSlideUp: {
         initial: 'translateY(120px) scale(0.85)',
         final: 'translateY(0) scale(1)',
-        duration: '1.2s',
+        duration: '0.5s',
         easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
         opacity: { from: 0, to: 1 }
     },
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { selector: '.feature-card', animation: 'gentleFloat', baseDelay: 50 },
         { selector: '.capability-card', animation: 'modernSlideUp', baseDelay: 100 },
         { selector: '.faq-glass-item', animation: 'elegantFadeUp', baseDelay: 75 },
-        { selector: '.scenario-card', animation: 'premiumScale', baseDelay: 50 },
+        // NOTE: .scenario-card removed - handled separately with custom timing
         { selector: '.ai-interface', animation: 'sophisticatedFlip', baseDelay: 175 },
         { selector: '.dashboard-grid', animation: 'smoothSlideLeft', baseDelay: 200 }
     ];
@@ -205,30 +205,61 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Sophisticated title animations
+    // Sophisticated title animations (EXCLUDING cards that should be unified)
     const titles = document.querySelectorAll('h1, h2, h3, .title, .section-label, .exploration-title');
     titles.forEach((title, index) => {
         const animationType = ['elegantFadeUp', 'gentleFloat', 'modernSlideUp'][index % 3];
-        addPremiumAnimation(title, animationType, index * 80);
-        totalElements++;
+        // Skip cards that should be handled separately
+        const isInCallCard = title.closest('.apple-call-card');
+        const isInPricingCard = title.closest('.plans-section .apple-glass-card');
+        const isInIntelligenceCard = title.closest('.intelligence-card');
+        const isInDiscoveryCard = title.closest('.apple-discovery-card');
+        const isInFaqCard = title.closest('.faq-glass-item');
+        const isInFaqCta = title.closest('.faq-cta');
+        
+        if (!isInCallCard && !isInPricingCard && !isInIntelligenceCard && !isInDiscoveryCard && !isInFaqCard && !isInFaqCta) {
+            // Special fast timing for main section titles
+            const isSectionTitle = title.classList.contains('new-section-title') || 
+                                 title.classList.contains('plans-title') || 
+                                 title.classList.contains('discovery-planning-title') ||
+                                 title.classList.contains('faq-title');
+            
+            const delay = isSectionTitle ? 0 : index * 80; // Instant for section titles
+            addPremiumAnimation(title, animationType, delay);
+            totalElements++;
+        }
     });
     
-    // Premium button animations
+    // Premium button animations (EXCLUDING buttons inside unified cards)
     const buttons = document.querySelectorAll('button, .cta-button, .contact-btn, .get-started-btn');
     buttons.forEach((button, index) => {
-        addPremiumAnimation(button, 'premiumScale', index * 120);
-        totalElements++;
+        // Skip buttons inside cards that should be unified
+        const isInPricingCard = button.closest('.plans-section .apple-glass-card');
+        const isInIntelligenceCard = button.closest('.intelligence-card');
+        const isInDiscoveryCard = button.closest('.apple-discovery-card');
+        const isInFaqCard = button.closest('.faq-glass-item');
+        const isInFaqCta = button.closest('.faq-cta');
+        if (!isInPricingCard && !isInIntelligenceCard && !isInDiscoveryCard && !isInFaqCard && !isInFaqCta) {
+            addPremiumAnimation(button, 'premiumScale', index * 120);
+            totalElements++;
+        }
     });
     
-    // Animate text content (FASTER for call handling cards)
+    // Animate text content (EXCLUDING cards that should be unified)
     const textElements = document.querySelectorAll('p, .description, .metric-label, .metric-value');
     textElements.forEach((text, index) => {
         if (text.textContent.trim().length > 10) { // Only animate meaningful text
-            // Check if this text is inside a scenario card (call handling section)
-            const isInScenarioCard = text.closest('.scenario-card');
-            const delay = isInScenarioCard ? index * 10 : index * 60; // Even faster for scenario cards
-            addPremiumAnimation(text, 'gentleFloat', delay);
-            totalElements++;
+            // Skip cards that should be handled separately
+            const isInCallCard = text.closest('.apple-call-card');
+            const isInPricingCard = text.closest('.plans-section .apple-glass-card');
+            const isInIntelligenceCard = text.closest('.intelligence-card');
+            const isInDiscoveryCard = text.closest('.apple-discovery-card');
+            const isInFaqCard = text.closest('.faq-glass-item');
+            const isInFaqCta = text.closest('.faq-cta');
+            if (!isInCallCard && !isInPricingCard && !isInIntelligenceCard && !isInDiscoveryCard && !isInFaqCard && !isInFaqCta) {
+                addPremiumAnimation(text, 'gentleFloat', index * 60);
+                totalElements++;
+            }
         }
     });
     
@@ -323,6 +354,152 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // 🎯 SPECIAL HANDLING FOR INBOUND CALL HANDLING SECTION 🎯
+    const callHandlingSection = document.querySelector('.call-handling');
+    if (callHandlingSection) {
+        console.log('📞 Setting up special timing for Inbound Call Handling section');
+        
+        // Create perfect reading-time animations
+        const readingTimeAnimations = {
+            cardAppear: {
+                initial: 'translateY(80px) scale(0.9)',
+                final: 'translateY(0) scale(1)',
+                duration: '0.5s',
+                easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                opacity: { from: 0, to: 1 }
+            },
+            titleReveal: {
+                initial: 'translateY(40px)',
+                final: 'translateY(0)',
+                duration: '0.2s',
+                easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                opacity: { from: 0, to: 1 }
+            },
+            textReveal: {
+                initial: 'translateY(30px)',
+                final: 'translateY(0)',
+                duration: '0.2s',
+                easing: 'cubic-bezier(0.23, 1, 0.32, 1)',
+                opacity: { from: 0, to: 1 }
+            }
+        };
+        
+        // Apply reading-time animations to call handling cards (words animate WITH the card)
+        const callCards = callHandlingSection.querySelectorAll('.apple-call-card');
+        callCards.forEach((card, cardIndex) => {
+            // Card appears with ALL content at once (much faster)
+            addReadingTimeAnimation(card, 'cardAppear', cardIndex * 100);
+            totalElements++;
+            
+            // All text inside the card animates together with the card (no separate animations)
+            // Remove any separate animations for titles and text - they move with the parent card
+        });
+        
+        // Function to apply reading-time animations
+        function addReadingTimeAnimation(element, animationType, delay) {
+            const config = readingTimeAnimations[animationType];
+            
+            element.style.willChange = 'transform, opacity';
+            element.style.opacity = config.opacity.from.toString();
+            element.style.transform = config.initial;
+            element.style.transition = `all ${config.duration} ${config.easing}`;
+            element.style.transitionDelay = delay + 'ms';
+            
+            element.dataset.animationType = 'readingTime';
+            element.dataset.animated = 'false';
+            element.dataset.finalTransform = config.final;
+            element.dataset.finalOpacity = config.opacity.to.toString();
+        }
+        
+        console.log(`📚 Applied reading-time animations to call handling section`);
+    }
+    
+    // 💰 SPECIAL HANDLING FOR CHOOSE YOUR PLAN SECTION 💰
+    const plansSection = document.querySelector('.plans-section');
+    if (plansSection) {
+        console.log('💰 Setting up unified animations for Choose Your Plan section');
+        
+        // Apply unified animations to pricing cards only
+        const pricingCards = plansSection.querySelectorAll('.apple-glass-card');
+        pricingCards.forEach((card, cardIndex) => {
+            // Each pricing card appears with ALL its content at once
+            addPremiumAnimation(card, 'elegantFadeUp', cardIndex * 150);
+            totalElements++;
+            console.log(`💳 Pricing card ${cardIndex + 1} will animate as unified unit`);
+        });
+        
+        console.log(`💰 Applied unified animations to ${pricingCards.length} pricing cards`);
+    }
+    
+    // 🛠️ SPECIAL HANDLING FOR CUSTOM INTELLIGENCE SOLUTIONS SECTION 🛠️
+    const customIntelligenceSection = document.querySelector('.new-section');
+    if (customIntelligenceSection) {
+        console.log('🛠️ Setting up unified animations for Custom Intelligence Solutions section');
+        
+        // Apply unified animations to intelligence cards
+        const intelligenceCards = customIntelligenceSection.querySelectorAll('.intelligence-card');
+        
+        intelligenceCards.forEach((card, cardIndex) => {
+            // Each intelligence card appears with ALL its content at once
+            addPremiumAnimation(card, 'modernSlideUp', cardIndex * 120);
+            totalElements++;
+            console.log(`🧠 Intelligence card ${cardIndex + 1} will animate as unified unit`);
+        });
+        
+        console.log(`🛠️ Applied unified animations to ${intelligenceCards.length} intelligence solution cards`);
+    }
+    
+    // 🔍 SPECIAL HANDLING FOR DISCOVERY & PLANNING SECTION 🔍
+    const discoverySection = document.querySelector('.discovery-planning');
+    if (discoverySection) {
+        console.log('🔍 Setting up unified animations for Discovery & Planning section');
+        
+        // Apply unified animations to discovery cards
+        const discoveryCards = discoverySection.querySelectorAll('.apple-discovery-card');
+        
+        discoveryCards.forEach((card, cardIndex) => {
+            // Each discovery card appears with ALL its content at once
+            addPremiumAnimation(card, 'smoothSlideRight', cardIndex * 150);
+            totalElements++;
+            console.log(`🔬 Discovery card ${cardIndex + 1} will animate as unified unit`);
+        });
+        
+        console.log(`🔍 Applied unified animations to ${discoveryCards.length} discovery cards`);
+    }
+    
+    // ❓ SPECIAL HANDLING FOR FAQ SECTION ❓
+    const faqSection = document.querySelector('.faq-section');
+    if (faqSection) {
+        console.log('❓ Setting up unified animations for FAQ section');
+        
+        // Apply unified animations to FAQ cards
+        const faqCards = faqSection.querySelectorAll('.faq-glass-item');
+        
+        faqCards.forEach((card, cardIndex) => {
+            // Each FAQ card appears with ALL its content at once
+            addPremiumAnimation(card, 'elegantFadeUp', cardIndex * 100);
+            totalElements++;
+            console.log(`❓ FAQ card ${cardIndex + 1} will animate as unified unit`);
+        });
+        
+        console.log(`❓ Applied unified animations to ${faqCards.length} FAQ cards`);
+    }
+    
+    // 📞 SPECIAL HANDLING FOR FAQ CTA SECTION 📞
+    const faqCtaCards = document.querySelectorAll('.faq-cta');
+    if (faqCtaCards.length > 0) {
+        console.log('📞 Setting up unified animations for FAQ CTA cards');
+        
+        faqCtaCards.forEach((card, cardIndex) => {
+            // Each FAQ CTA card appears with ALL its content at once
+            addPremiumAnimation(card, 'premiumScale', cardIndex * 120);
+            totalElements++;
+            console.log(`📞 FAQ CTA card ${cardIndex + 1} will animate as unified unit`);
+        });
+        
+        console.log(`📞 Applied unified animations to ${faqCtaCards.length} FAQ CTA cards`);
+    }
+    
     console.log(`🎨 Premium animations applied to ${totalElements} elements`);
     
     // High-performance intersection observer with perfect timing
@@ -341,13 +518,36 @@ document.addEventListener('DOMContentLoaded', function() {
         rootMargin: '50px 0px -50px 0px' // Perfect timing window
     });
     
+    // Special observer for call handling section (perfect reading timing)
+    const callHandlingObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
+                // Perfect timing for reading
+                setTimeout(() => {
+                    executeAnimation(entry.target);
+                }, 200); // Small delay to settle the scroll
+                callHandlingObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: [0.3, 0.5], // Trigger when well into view for reading
+        rootMargin: '0px 0px -20% 0px' // More conservative timing for reading
+    });
+    
     // Observe all animated elements
     const animatedElements = document.querySelectorAll('[data-animation-type]');
+    const readingTimeElements = document.querySelectorAll('[data-animation-type="readingTime"]');
+    
     animatedElements.forEach(element => {
-        premiumObserver.observe(element);
+        if (element.dataset.animationType === 'readingTime') {
+            callHandlingObserver.observe(element);
+        } else {
+            premiumObserver.observe(element);
+        }
     });
     
     console.log(`👀 Observing ${animatedElements.length} elements with premium timing`);
+    console.log(`📖 Observing ${readingTimeElements.length} elements with reading timing`);
 });
 
 // Enhanced load handler for any missed elements
