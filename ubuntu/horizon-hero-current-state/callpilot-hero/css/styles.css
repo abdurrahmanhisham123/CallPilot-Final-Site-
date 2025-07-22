@@ -7443,10 +7443,290 @@ h2,
     transform: translateY(0);
 }
 
-/* Enhanced hover effects for animated elements */
-.animate-on-scroll.animated:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(138, 43, 226, 0.2);
+/* ========================================================================== 
+   🎨 ULTIMATE SCROLL ANIMATIONS - 10/10 QUALITY - NO HOVER EFFECTS
+   ========================================================================== */
+
+/* Base animation system - all elements start invisible */
+.scroll-fade {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-fade.animate-in {
+    opacity: 1;
+}
+
+/* ========================================================================== 
+   ✨ SOPHISTICATED ENTRANCE ANIMATIONS
+   ========================================================================== */
+
+/* Fade from bottom with scale */
+.fade-up-scale {
+    opacity: 0;
+    transform: translateY(80px) scale(0.9);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.fade-up-scale.animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Fade from left with rotation */
+.fade-left-rotate {
+    opacity: 0;
+    transform: translateX(-100px) rotateY(-20deg);
+    transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.fade-left-rotate.animate-in {
+    opacity: 1;
+    transform: translateX(0) rotateY(0);
+}
+
+/* Fade from right with rotation */
+.fade-right-rotate {
+    opacity: 0;
+    transform: translateX(100px) rotateY(20deg);
+    transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.fade-right-rotate.animate-in {
+    opacity: 1;
+    transform: translateX(0) rotateY(0);
+}
+
+/* 3D flip entrance */
+.flip-3d {
+    opacity: 0;
+    transform: perspective(1000px) rotateX(-90deg) translateY(50px);
+    transition: all 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.flip-3d.animate-in {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0) translateY(0);
+}
+
+/* Elastic bounce entrance */
+.bounce-elastic {
+    opacity: 0;
+    transform: scale(0.3) translateY(100px);
+    transition: all 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.bounce-elastic.animate-in {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+/* Zoom with blur effect */
+.zoom-blur-in {
+    opacity: 0;
+    transform: scale(1.5);
+    filter: blur(20px);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.zoom-blur-in.animate-in {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+}
+
+/* Slide and fade with tilt */
+.slide-tilt {
+    opacity: 0;
+    transform: translateY(60px) rotate(5deg);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.slide-tilt.animate-in {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+}
+
+/* ========================================================================== 
+   🎯 PREMIUM CARD ANIMATIONS
+   ========================================================================== */
+
+/* Glass card lift with glow */
+.glass-lift {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+    box-shadow: 0 0 0 rgba(138, 43, 226, 0);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.glass-lift.animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    box-shadow: 0 20px 50px rgba(138, 43, 226, 0.15);
+}
+
+/* Card flip reveal */
+.card-flip-reveal {
+    opacity: 0;
+    transform: perspective(1000px) rotateY(-180deg) scale(0.8);
+    transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.card-flip-reveal.animate-in {
+    opacity: 1;
+    transform: perspective(1000px) rotateY(0) scale(1);
+}
+
+/* Card slide from depth */
+.card-depth-slide {
+    opacity: 0;
+    transform: perspective(1000px) translateZ(-200px) translateY(50px) rotateX(20deg);
+    transition: all 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.card-depth-slide.animate-in {
+    opacity: 1;
+    transform: perspective(1000px) translateZ(0) translateY(0) rotateX(0);
+}
+
+/* Card spring bounce */
+.card-spring {
+    opacity: 0;
+    transform: scale(0.5) translateY(80px) rotate(-10deg);
+    transition: all 1.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.card-spring.animate-in {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotate(0);
+}
+
+/* ========================================================================== 
+   🌟 STAGGERED ANIMATION DELAYS
+   ========================================================================== */
+
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
+.stagger-7 { transition-delay: 0.7s; }
+.stagger-8 { transition-delay: 0.8s; }
+.stagger-9 { transition-delay: 0.9s; }
+.stagger-10 { transition-delay: 1s; }
+
+/* Fast stagger for quick sequences */
+.fast-stagger-1 { transition-delay: 0.05s; }
+.fast-stagger-2 { transition-delay: 0.1s; }
+.fast-stagger-3 { transition-delay: 0.15s; }
+.fast-stagger-4 { transition-delay: 0.2s; }
+.fast-stagger-5 { transition-delay: 0.25s; }
+.fast-stagger-6 { transition-delay: 0.3s; }
+
+/* ========================================================================== 
+   🎭 SECTION-SPECIFIC ANIMATIONS
+   ========================================================================== */
+
+/* Hero section dramatic entrance */
+.hero-dramatic {
+    opacity: 0;
+    transform: translateY(120px) scale(0.9);
+    transition: all 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.hero-dramatic.animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Text reveals with typewriter effect */
+.text-typewriter {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.text-typewriter.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Button magnetic entrance */
+.button-entrance {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+    transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.button-entrance.animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* ========================================================================== 
+   🔥 ADVANCED EFFECTS
+   ========================================================================== */
+
+/* Morphing entrance */
+.morph-in {
+    opacity: 0;
+    transform: scale(0) rotate(180deg);
+    border-radius: 50%;
+    transition: all 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.morph-in.animate-in {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+    border-radius: inherit;
+}
+
+/* Gradient reveal */
+.gradient-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    background: linear-gradient(45deg, transparent 0%, transparent 100%);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.gradient-reveal.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+    background: linear-gradient(45deg, rgba(138, 43, 226, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+}
+
+/* Perspective slide */
+.perspective-slide {
+    opacity: 0;
+    transform: perspective(1000px) rotateX(45deg) translateY(100px);
+    transform-origin: center bottom;
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.perspective-slide.animate-in {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0) translateY(0);
+}
+
+/* ========================================================================== 
+   ⚡ PERFORMANCE OPTIMIZATIONS
+   ========================================================================== */
+
+[class*="fade-"],
+[class*="card-"],
+[class*="glass-"],
+[class*="bounce-"],
+[class*="zoom-"],
+[class*="slide-"],
+[class*="flip-"],
+[class*="morph-"],
+[class*="gradient-"],
+[class*="perspective-"] {
+    will-change: transform, opacity;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+/* Accessibility: Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    [class*="fade-"],
+    [class*="card-"],
+    [class*="glass-"],
+    [class*="bounce-"],
+    [class*="zoom-"],
+    [class*="slide-"],
+    [class*="flip-"],
+    [class*="morph-"],
+    [class*="gradient-"],
+    [class*="perspective-"] {
+        transition: opacity 0.3s ease !important;
+        transform: none !important;
+        filter: none !important;
+    }
 }
 
 /* Responsive adjustments */
