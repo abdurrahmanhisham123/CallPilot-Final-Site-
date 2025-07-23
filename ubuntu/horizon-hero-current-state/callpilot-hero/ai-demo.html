@@ -153,17 +153,125 @@
             transform: translateY(0);
         }
         
-        @media (max-width: 768px) {
-            .demo-form-title {
-                font-size: 36px;
+        @media (max-width: 1024px) {
+            .demo-form-container {
+                max-width: 700px;
+                padding: 0 24px;
             }
             
             .demo-form {
-                padding: 30px;
+                padding: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .demo-form-section {
+                padding-top: 120px;
+                padding-bottom: 80px;
             }
             
             .demo-form-container {
                 max-width: 100%;
+                padding: 0 20px;
+            }
+            
+            .demo-form-title {
+                font-size: 32px;
+                margin-bottom: 16px;
+            }
+            
+            .demo-form-subtitle {
+                font-size: 16px;
+                margin-bottom: 40px;
+            }
+            
+            .demo-form {
+                padding: 32px 24px;
+                border-radius: 20px;
+            }
+            
+            .form-group {
+                margin-bottom: 20px;
+            }
+            
+            .form-input,
+            .form-select,
+            .form-textarea {
+                padding: 14px 16px;
+                font-size: 16px;
+                border-radius: 12px;
+            }
+            
+            .submit-button {
+                padding: 16px 32px;
+                font-size: 16px;
+                border-radius: 12px;
+                margin-top: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .demo-form-section {
+                padding-top: 100px;
+                padding-bottom: 60px;
+            }
+            
+            .demo-form-container {
+                padding: 0 16px;
+            }
+            
+            .demo-form-title {
+                font-size: 28px;
+                line-height: 1.2;
+            }
+            
+            .demo-form-subtitle {
+                font-size: 15px;
+                line-height: 1.4;
+            }
+            
+            .demo-form {
+                padding: 24px 20px;
+                border-radius: 16px;
+            }
+            
+            .form-label {
+                font-size: 13px;
+                margin-bottom: 6px;
+            }
+            
+            .form-input,
+            .form-select,
+            .form-textarea {
+                padding: 12px 14px;
+                font-size: 16px;
+                border-radius: 10px;
+            }
+            
+            .form-note {
+                font-size: 11px;
+                margin-top: 3px;
+            }
+            
+            .submit-button {
+                padding: 14px 28px;
+                font-size: 15px;
+                border-radius: 10px;
+                margin-top: 20px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .demo-form-title {
+                font-size: 24px;
+            }
+            
+            .demo-form-subtitle {
+                font-size: 14px;
+            }
+            
+            .demo-form {
+                padding: 20px 16px;
             }
         }
     </style>
@@ -211,13 +319,35 @@
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
                     <span class="menu-line"></span>
                     <span class="menu-line"></span>
                     <span class="menu-line"></span>
                 </button>
             </div>
         </div>
+        
+        <!-- Mobile Navigation Overlay -->
+        <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobileNav">
+            <button class="mobile-nav-close" id="mobileNavClose"></button>
+            <div class="mobile-nav-content">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item">
+                        <a href="/home" class="mobile-nav-link">Home</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="/plans" class="mobile-nav-link">Plans</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="/ai-demo" class="mobile-nav-link">AI Demo</a>
+                    </li>
+                </ul>
+                <a href="/ai-demo" class="mobile-nav-contact">Contact</a>
+            </div>
+        </nav>
     </header>
 
     <main>

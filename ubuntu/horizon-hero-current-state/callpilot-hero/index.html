@@ -163,13 +163,35 @@
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
                     <span class="menu-line"></span>
                     <span class="menu-line"></span>
                     <span class="menu-line"></span>
                 </button>
             </div>
         </div>
+        
+        <!-- Mobile Navigation Overlay -->
+        <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobileNav">
+            <button class="mobile-nav-close" id="mobileNavClose"></button>
+            <div class="mobile-nav-content">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item">
+                        <a href="/home" class="mobile-nav-link">Home</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="/plans" class="mobile-nav-link">Plans</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="/ai-demo" class="mobile-nav-link">AI Demo</a>
+                    </li>
+                </ul>
+                <a href="/ai-demo" class="mobile-nav-contact">Contact</a>
+            </div>
+        </nav>
     </header>
 
     <main>

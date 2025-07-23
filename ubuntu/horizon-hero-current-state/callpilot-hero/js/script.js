@@ -10,6 +10,9 @@ function init() {
     try {
         initHeroAnimation();
         console.log("Hero animation initialized successfully.");
+        
+        initMobileNavigation();
+        console.log("Mobile navigation initialized successfully.");
     } catch (e) {
         console.error("Error initializing hero animation:", e);
     }
@@ -2147,6 +2150,69 @@ function initPlansSectionAnimations() {
     planCards.forEach((card) => {
         observer.observe(card);
     });
+}
+
+// Mobile Navigation Functionality - Instant response
+function initMobileNavigation() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileNavClose = document.getElementById('mobileNavClose');
+    const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+    
+    if (mobileMenuBtn && mobileNav) {
+        // Ensure menu is initially hidden but ready
+        mobileNav.style.display = 'block';
+        
+        // Helper to open menu - instant
+        const openMenu = () => {
+            // Instant - no delay
+            mobileNav.classList.add('active');
+            if (mobileNavOverlay) mobileNavOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+        
+        // Helper to close menu - instant
+        const closeMenu = () => {
+            // Immediate close
+            mobileNav.classList.remove('active');
+            if (mobileNavOverlay) mobileNavOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+        
+        // Open mobile nav - instant response
+        mobileMenuBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            openMenu();
+        }, { passive: false });
+        
+        // Close mobile nav - instant response
+        if (mobileNavClose) {
+            mobileNavClose.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                closeMenu();
+            }, { passive: false });
+        }
+        
+        // Close on overlay click
+        if (mobileNavOverlay) {
+            mobileNavOverlay.addEventListener('click', closeMenu);
+        }
+        
+        // Close on link click
+        const mobileNavLinks = mobileNav.querySelectorAll('.mobile-nav-link, .mobile-nav-contact');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+        
+        // Close on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+    }
 }
 
 

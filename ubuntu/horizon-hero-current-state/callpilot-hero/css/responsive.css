@@ -1,123 +1,571 @@
 /* ==========================================================================
-   Media Queries
+   Mobile-Only Responsive Design - Desktop Unchanged
    ========================================================================== */
 
-/* General Layout & Hero Section */
-@media (max-width: 1200px) {
-    .container {
-        max-width: 992px;
+/* Desktop - Hide mobile navigation elements */
+@media (min-width: 769px) {
+    .mobile-nav {
+        display: none !important;
+        visibility: hidden !important;
     }
-    .hero-content {
-        gap: 40px;
-    }
-    .hero-title {
-        font-size: 48px;
+    
+    .mobile-menu-btn {
+        display: none !important;
+        visibility: hidden !important;
     }
 }
 
-@media (max-width: 992px) {
+/* Only apply styles to mobile and tablet - DO NOT touch desktop */
+
+/* Tablet styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .plans-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        max-width: 800px;
+        margin: 0 auto;
+        gap: 24px;
+    }
+}
+
+/* Mobile and small tablet - Center everything */
+@media (max-width: 768px) {
+    /* COMPLETELY DISABLE ALL ANIMATIONS ON MOBILE */
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        animation-duration: 0s !important;
+        animation-delay: 0s !important;
+        animation-fill-mode: none !important;
+        animation-iteration-count: 1 !important;
+        transition: none !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    /* Mobile performance optimizations */
+    html {
+        overflow-x: hidden !important;
+        overflow-y: visible !important;
+        max-width: 100vw !important;
+        -webkit-text-size-adjust: 100% !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+    }
+    
+    body {
+        overflow-x: hidden !important;
+        overflow-y: visible !important;
+        max-width: 100vw !important;
+        width: 100% !important;
+        -webkit-transform: translateZ(0) !important;
+        transform: translateZ(0) !important;
+    }
+    
+    * {
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+        -webkit-tap-highlight-color: transparent !important;
+        -webkit-touch-callout: none !important;
+    }
+    
+    /* Keep backgrounds - animations already disabled above */
+    
+    /* Force all content to center */
     .container {
-        max-width: 768px;
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 16px !important;
+        margin: 0 auto;
+        overflow: visible !important;
     }
+    
+    /* Header fixes - Complete rebuild */
+    .header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        z-index: 1000 !important;
+        background: rgba(0, 0, 0, 0.9) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        border-bottom: 1px solid rgba(138, 43, 226, 0.2) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+    }
+    
+    .header .container {
+        max-width: 100% !important;
+        padding: 0 16px !important;
+    }
+    
     .header-content {
-        padding: 12px 0;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 16px 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 60px !important;
+        box-sizing: border-box !important;
     }
+    
+    .logo {
+        flex-shrink: 0 !important;
+        z-index: 1001 !important;
+    }
+    
+    .logo-text {
+        font-size: 22px !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+    }
+    
     .nav {
-        display: none;
+        display: none !important;
     }
+    
+    .user-actions {
+        display: none !important;
+    }
+    
+    .mobile-menu-btn {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 4px !important;
+        width: 40px !important;
+        height: 40px !important;
+        background: none !important;
+        border: none !important;
+        cursor: pointer !important;
+        z-index: 1001 !important;
+        padding: 8px !important;
+        -webkit-tap-highlight-color: transparent !important;
+        touch-action: manipulation !important;
+    }
+    
+    .menu-line {
+        width: 20px !important;
+        height: 2px !important;
+        background: #ffffff !important;
+        border-radius: 1px !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    /* Slide-in Mobile Navigation Menu - Nice background, no animations */
+    .mobile-nav {
+        position: fixed !important;
+        top: 0 !important;
+        right: -280px !important;
+        bottom: 0 !important;
+        width: 280px !important;
+        max-width: 85vw !important;
+        height: 100vh !important;
+        background: rgba(0, 0, 0, 0.9) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        z-index: 9999 !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3) !important;
+        border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+        transition: none !important;
+    }
+    
+    .mobile-nav.active {
+        right: 0 !important;
+    }
+    
+    /* Dark overlay when menu is open */
+    .mobile-nav-overlay {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: none !important;
+        z-index: 9998 !important;
+    }
+    
+    .mobile-nav-overlay.active {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    /* Remove heavy effects for performance */
+    .mobile-nav::before {
+        display: none !important;
+    }
+    
+    .mobile-nav::after {
+        display: none !important;
+    }
+    
+    /* Mobile Nav Content Container */
+    .mobile-nav-content {
+        position: relative !important;
+        z-index: 3 !important;
+        height: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        padding: 80px 30px 40px 30px !important;
+    }
+    
+    /* Close Button - Nice background, no transitions */
+    .mobile-nav-close {
+        position: absolute !important;
+        top: 20px !important;
+        right: 20px !important;
+        width: 36px !important;
+        height: 36px !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        backdrop-filter: blur(5px) !important;
+        -webkit-backdrop-filter: blur(5px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        cursor: pointer !important;
+        z-index: 4 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 50% !important;
+        transition: none !important;
+    }
+    
+    .mobile-nav-close:active {
+        background: rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    .mobile-nav-close::before,
+    .mobile-nav-close::after {
+        content: "" !important;
+        position: absolute !important;
+        width: 18px !important;
+        height: 2px !important;
+        background: rgba(255, 255, 255, 0.8) !important;
+        border-radius: 1px !important;
+    }
+    
+    .mobile-nav-close::before {
+        transform: rotate(45deg) !important;
+    }
+    
+    .mobile-nav-close::after {
+        transform: rotate(-45deg) !important;
+    }
+    
+    /* Navigation List */
+    .mobile-nav-list {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 0 40px 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+    
+    .mobile-nav-item {
+        width: 100% !important;
+    }
+    
+    .mobile-nav-link {
+        display: block !important;
+        padding: 16px 20px !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        text-decoration: none !important;
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif !important;
+        font-size: 18px !important;
+        font-weight: 400 !important;
+        text-align: left !important;
+        background: none !important;
+        border: none !important;
+        transition: none !important;
+        width: 100% !important;
+    }
+    
+    .mobile-nav-link:active {
+        color: #8a2be2 !important;
+    }
+    
+    /* Contact Button - Nice gradient, no transitions */
+    .mobile-nav-contact {
+        display: block !important;
+        margin-top: 20px !important;
+        padding: 14px 28px !important;
+        background: linear-gradient(135deg, #8a2be2 0%, #6a1fb8 100%) !important;
+        border: none !important;
+        border-radius: 25px !important;
+        text-align: center !important;
+        color: #ffffff !important;
+        text-decoration: none !important;
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif !important;
+        font-weight: 500 !important;
+        font-size: 16px !important;
+        transition: none !important;
+        width: 100% !important;
+        box-shadow: 0 2px 8px rgba(138, 43, 226, 0.2) !important;
+    }
+    
+    .mobile-nav-contact:active {
+        background: #7a1fd0 !important;
+    }
+    
+    /* Hero section - center everything */
+    .hero {
+        padding-top: 100px !important;
+        padding-bottom: 60px !important;
+    }
+    
+    /* Make purple circles smaller and lower in hero section */
+    .hero::before {
+        width: 400px !important;
+        height: 350px !important;
+        top: 40% !important;
+        left: -20% !important;
+    }
+    
+    .hero::after {
+        width: 400px !important;
+        height: 350px !important;
+        top: 40% !important;
+        right: -15% !important;
+    }
+    
     .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 60px;
-    }
-    .hero-text {
+        display: block !important;
+        text-align: center !important;
         max-width: 100%;
     }
+    
+    .hero-text {
+        max-width: 100% !important;
+        margin: 0 auto 40px auto;
+    }
+    
+    /* Hero title styling */
+    .hero-title {
+        font-size: 32px !important;
+        line-height: 1.2 !important;
+        margin-bottom: 20px !important;
+        word-spacing: normal !important;
+    }
+    
+    /* Fix word spacing in title spans */
+    .hero-title .word,
+    .hero-title .accent-text {
+        margin-right: 0.25em !important;
+    }
+    
+    .hero-title .word:last-child,
+    .hero-title .accent-text:last-child {
+        margin-right: 0 !important;
+    }
+    
+    /* Hero description styling */
+    .hero-description {
+        font-size: 16px !important;
+        line-height: 1.4 !important;
+        margin-bottom: 16px !important;
+        max-width: 320px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    /* Hero fact styling */
+    .hero-fact {
+        font-size: 14px !important;
+        line-height: 1.3 !important;
+        margin-bottom: 32px !important;
+        max-width: 280px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
     .hero-visual {
+        max-width: 100% !important;
         margin: 0 auto;
-        max-width: 500px;
-    }
-    .hero-title {
-        font-size: 42px;
-    }
-    .hero-buttons {
-        justify-content: center;
-    }
-    .trust-indicators {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 0 16px;
-    }
-    .user-actions .sign-in {
-        display: none;
-    }
-    .hero {
-        padding: 80px 0 60px;
-    }
-    .hero-title {
-        font-size: 36px;
-    }
-    .hero-description {
-        font-size: 15px;
-    }
-    .floating-elements {
-        display: none;
-    }
-    .ai-interface {
-        transform: scale(0.9);
-    }
-}
-
-@media (max-width: 576px) {
-    body {
-        font-size: 14px;
-    }
-    .header {
-        padding: 8px 0;
-    }
-    .logo-text {
-        font-size: 18px;
-    }
-    .contact-btn {
-        padding: 9px 18px;
-        font-size: 13px;
-    }
-    .hero-badge {
-        padding: 10px 16px;
-        margin-bottom: 20px;
-    }
-    .badge-text {
-        font-size: 12px;
-    }
-    .hero-title {
-        font-size: 32px;
-    }
-    .hero-description {
-        font-size: 14px;
-    }
-    .cta-button {
-        width: 100%;
-        margin-bottom: 12px;
-    }
-    .hero-buttons {
-        flex-direction: column;
-    }
-    .trust-indicators {
-        flex-direction: column;
-        gap: 16px;
-    }
-    .ai-interface {
         transform: scale(0.8);
     }
-}
-
-/* Section-specific Responsiveness */
-@media (max-width: 992px) {
-    .exploration-content,
+    
+    .hero-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+        max-width: 300px !important;
+        margin: 0 auto !important;
+    }
+    
+    .cta-button {
+        width: 100% !important;
+        padding: 16px 24px !important;
+        text-align: center !important;
+    }
+    
+    /* Plans section - center all cards */
+    .plans-grid {
+        display: block !important;
+        max-width: 400px !important;
+        margin: 0 auto !important;
+    }
+    
+    .apple-glass-card {
+        display: block !important;
+        width: 100% !important;
+        max-width: 350px !important;
+        margin: 0 auto 24px auto !important;
+        padding: 20px !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 20px !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    /* All sections - force center layout with proper mobile ordering */
+    .exploration-content {
+        display: flex !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        max-width: 100%;
+        padding: 0 20px !important;
+    }
+    
+    /* Exploration section - Better mobile spacing */
+    .exploration-section {
+        padding: 60px 0 !important;
+        overflow: visible !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .exploration-text {
+        order: -1 !important;
+        margin-bottom: 60px !important;
+        padding: 0 20px !important;
+        text-align: center !important;
+    }
+    
+    .exploration-visual {
+        order: 1 !important;
+        margin-top: 10px !important;
+        padding: 0 20px !important;
+    }
+    
+    /* Exploration section styling - Clean mobile layout */
+    .exploration-title {
+        font-size: 28px !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+    
+    .exploration-description {
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        text-align: center !important;
+        margin-bottom: 32px !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+    
+    .section-label {
+        margin-bottom: 16px !important;
+        font-size: 14px !important;
+        text-align: center !important;
+        color: #8a2be2 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+    }
+    
+    /* Emerging frontiers card styling - Mobile optimized */
+    .emerging-frontiers-card {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 24px 20px !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 16px !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .frontiers-header {
+        margin-bottom: 20px !important;
+        text-align: center !important;
+    }
+    
+    .frontiers-title {
+        font-size: 20px !important;
+        line-height: 1.3 !important;
+        margin-bottom: 0 !important;
+        text-align: center !important;
+        color: #ffffff !important;
+    }
+    
+    .frontiers-badge {
+        margin-bottom: 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        font-size: 12px !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
+    
+    .frontier-item {
+        margin-bottom: 12px !important;
+        padding: 16px !important;
+        background: rgba(255, 255, 255, 0.03) !important;
+        border-radius: 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+    }
+    
+    .frontier-title {
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        color: #ffffff !important;
+        margin-bottom: 4px !important;
+    }
+    
+    .frontier-description {
+        font-size: 14px !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+        margin: 0 !important;
+    }
+    
+    .progress-container {
+        margin-top: 20px !important;
+        padding-top: 16px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+        text-align: center !important;
+    }
+    
+    .progress-text {
+        font-size: 14px !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+        margin-top: 8px !important;
+    }
+    
     .brilliance-content,
     .power-content,
     .victory-content,
@@ -127,192 +575,677 @@
     .capabilities-content,
     .faq-content,
     .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
+        display: block !important;
+        text-align: center !important;
+        max-width: 100%;
     }
-
-    .exploration-visual,
-    .brilliance-visual,
-    .power-visual {
-        margin: 40px auto 0;
-    }
-
-    .call-flow,
-    .victory-showcase,
-    .voice-tech-content {
-        flex-direction: column;
-    }
-
-    .plans-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .voice-carousel {
-        padding: 0;
-    }
-}
-
-@media (max-width: 768px) {
-    .exploration-title,
-    .brilliance-title,
-    .power-title,
-    .call-handling-title,
-    .voice-tech-title,
-    .victory-title,
-    .enhanced-title,
-    .discovery-title,
-    .trusted-title,
-    .capabilities-title,
-    .faq-title {
-        font-size: 32px;
-    }
-
-    .exploration-description,
-    .brilliance-description,
-    .power-description {
-        font-size: 15px;
-    }
-
-    .main-voice-card {
-        padding: 20px;
-    }
-
-    .showcase-left,
-    .showcase-right {
-        width: 100%;
-    }
-
-    .company-logos {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (max-width: 576px) {
-    .exploration-stats,
-    .brilliance-fact,
-    .power-fact {
-        text-align: left;
-    }
-
+    
+    /* All grids - make them single column centered */
+    .plans-grid,
     .personality-grid,
     .core-technologies,
-    .capabilities-grid {
-        grid-template-columns: 1fr;
+    .capabilities-grid,
+    .dashboard-grid,
+    .company-logos {
+        display: block !important;
+        max-width: 400px !important;
+        margin: 0 auto !important;
     }
-
-    .analytics-dashboard {
-        transform: scale(0.9);
+    
+    .personality-grid > *,
+    .core-technologies > *,
+    .capabilities-grid > *,
+    .dashboard-grid > *,
+    .company-logos > * {
+        display: block !important;
+        margin: 0 auto 16px auto !important;
+        max-width: 300px !important;
     }
-
-    .call-step {
-        flex-direction: row;
-        text-align: left;
+    
+    /* All cards - center them with nice backgrounds */
+    .main-voice-card,
+    .voice-card,
+    .upload-card,
+    .files-card,
+    .plan-card,
+    .solution-card,
+    .technology-card,
+    .capability-card,
+    .faq-item {
+        display: block !important;
+        width: 100% !important;
+        max-width: 350px !important;
+        margin: 0 auto 16px auto !important;
+        padding: 20px !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+        background: rgba(255, 255, 255, 0.03) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 16px !important;
     }
-
-    .voice-selection-panel {
-        padding: 15px;
+    
+    /* AI Voice Intelligence card - Fix mobile display issues */
+    .apple-glass-card {
+        position: relative !important;
+        overflow: hidden !important;
+        max-width: 320px !important;
+        margin: 0 auto 20px auto !important;
+        z-index: 2 !important;
     }
-
-    .victory-badge {
-        margin: 0 auto 20px;
+    
+    /* Ensure parent container allows gradient to show behind card */
+    .brilliance-visual,
+    .power-visual {
+        position: relative !important;
+        overflow: visible !important;
     }
-
-    .footer-brand,
-    .footer-links,
-    .footer-cta {
-        text-align: center;
-        margin-bottom: 30px;
+    
+    /* Hide entire AI Voice Intelligence section on mobile */
+    section.ai-brilliance {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
-
+    
+    /* Reorder Analytics Dashboard section - text above card on mobile */
+    .dashboard-power .power-content {
+        display: flex !important;
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+    
+    .dashboard-power .power-text {
+        order: -1 !important;
+        margin-bottom: 40px !important;
+        padding: 0 20px !important;
+        text-align: center !important;
+    }
+    
+    .dashboard-power .power-visual {
+        order: 1 !important;
+        margin-top: 0 !important;
+        padding: 0 20px !important;
+    }
+    
+    /* Make Analytics Dashboard card wider on mobile - override all other rules */
+    .dashboard-power .apple-glass-card.premium-dashboard {
+        max-width: calc(100vw - 40px) !important;
+        width: calc(100vw - 40px) !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Style the dashboard power section text */
+    .power-title {
+        font-size: 24px !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+        margin-bottom: 16px !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+    
+    .power-description {
+        font-size: 15px !important;
+        line-height: 1.4 !important;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+    
+    .power-fact {
+        display: none !important;
+    }
+    
+    /* Simplify glass card content for mobile */
+    .glass-header {
+        padding: 12px !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .glass-title {
+        font-size: 16px !important;
+        line-height: 1.3 !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .glass-status {
+        font-size: 12px !important;
+        gap: 6px !important;
+    }
+    
+    .glass-content {
+        padding: 0 12px 12px 12px !important;
+    }
+    
+    .feature-showcase {
+        gap: 8px !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .showcase-item {
+        padding: 8px !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 4px !important;
+    }
+    
+    .item-info {
+        text-align: center !important;
+        margin: 0 !important;
+    }
+    
+    .item-title {
+        font-size: 13px !important;
+        margin-bottom: 2px !important;
+    }
+    
+    .item-subtitle {
+        font-size: 11px !important;
+    }
+    
+    .item-value {
+        font-size: 10px !important;
+        padding: 2px 6px !important;
+    }
+    
+    .glass-metrics {
+        padding: 8px 0 !important;
+        gap: 4px !important;
+    }
+    
+    .metric-item {
+        padding: 8px 4px !important;
+        border-radius: 6px !important;
+    }
+    
+    .metric-value {
+        font-size: 14px !important;
+        margin-bottom: 2px !important;
+    }
+    
+    .metric-label {
+        font-size: 9px !important;
+    }
+    
+    /* Voice carousel - center everything */
+    .voice-carousel {
+        display: block !important;
+        text-align: center !important;
+    }
+    
+    .voice-line {
+        display: block !important;
+        animation: none !important;
+    }
+    
+    .voice-line .main-voice-card {
+        margin: 0 auto 16px auto !important;
+    }
+    
+    /* FAQ section - center items */
+    .faq-grid {
+        display: block !important;
+        max-width: 400px !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Footer - center all content */
+    .footer {
+        text-align: center !important;
+    }
+    
+    .footer-grid {
+        display: block !important;
+    }
+    
+    .footer-grid > div {
+        margin: 0 auto 30px auto !important;
+        text-align: center !important;
+        max-width: 300px !important;
+    }
+    
     .footer-bottom {
-        flex-direction: column;
-        gap: 15px;
+        display: block !important;
+        text-align: center !important;
     }
-}
-
-/* Card-specific Overrides */
-@media (max-width: 992px) {
+    
+    .footer-bottom > div {
+        margin: 20px auto 0 auto !important;
+        text-align: center !important;
+    }
+    
+    /* Hide problematic elements */
+    .floating-elements,
     .floating-card {
         display: none !important;
     }
-    .dashboard-grid {
-        grid-template-columns: 1fr !important;
+    
+    /* Fix "The Future of Communication Intelligence" section - Allow gradient overflow */
+    .brilliance-section {
+        padding: 40px 0 !important;
+        overflow: visible !important;
+        width: 100% !important;
+        max-width: 100% !important;
     }
-}
-
-@media (max-width: 768px) {
-    .upload-card, .files-card, .plan-card, .solution-card, .voice-card, .technology-card, .capability-card, .faq-item, .personality-card {
-        padding: 20px !important;
-        margin-bottom: 20px !important;
-    }
-
-    .card-title, .plan-title, .solution-title, .voice-name, .tech-title, .capability-title {
-        font-size: 1.1rem !important;
-    }
-}
-
-@media (max-width: 576px) {
-    .dashboard-stats {
-        grid-template-columns: 1fr !important;
-        gap: 15px !important;
-    }
-
-    .files-list .file-row {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 5px !important;
-    }
-
-    .voice-carousel {
+    
+    .brilliance-content {
         display: flex !important;
         flex-direction: column !important;
-        gap: 20px !important;
+        text-align: center !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        overflow: visible !important;
     }
-
-    .voice-line {
-        flex-direction: column !important;
-        gap: 20px !important;
-        animation: none !important;
+    
+    .brilliance-text {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 auto 30px auto !important;
+        text-align: center !important;
+        order: -1 !important;
     }
-}
-/* Hero Section Cards Responsiveness */
-@media (max-width: 1200px) {
-    .hero-visual {
-        transform: scale(0.9);
+    
+    .brilliance-title {
+        font-size: 22px !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+        margin-bottom: 12px !important;
+        max-width: 100% !important;
+        padding: 0 16px !important;
     }
-}
-
-@media (max-width: 992px) {
-    .hero-visual {
-        transform: scale(0.8);
+    
+    .brilliance-description {
+        font-size: 14px !important;
+        line-height: 1.4 !important;
+        text-align: center !important;
+        margin-bottom: 16px !important;
+        max-width: 100% !important;
+        padding: 0 16px !important;
     }
-}
-
-@media (max-width: 768px) {
-    .hero-visual {
-        transform: scale(1);
-        max-width: 100%;
+    
+    .brilliance-fact {
+        text-align: center !important;
+        margin: 16px auto !important;
+        max-width: 280px !important;
+        font-size: 13px !important;
+        padding: 0 16px !important;
     }
-    .floating-card {
-        position: relative;
-        top: auto;
-        left: auto;
-        right: auto;
-        bottom: auto;
-        margin-bottom: 15px;
-        animation: none;
-        transform: scale(1) !important;
+    
+    .brilliance-visual {
+        order: 1 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 20px auto 0 auto !important;
+        overflow: visible !important;
     }
+    
+    /* Hide all complex elements completely */
+    .ai-interface,
+    .analytics-dashboard,
+    .dashboard-grid,
+    .dashboard-stats,
+    .files-card,
+    .upload-card,
+    .stat-item,
+    .floating-card,
     .floating-elements {
-        position: relative;
+        display: none !important;
+        visibility: hidden !important;
+        width: 0 !important;
+        height: 0 !important;
+    }
+    
+    /* Create simple contained mobile card */
+    .brilliance-visual {
+        position: relative !important;
         display: block !important;
-        margin-top: 30px;
+        max-width: 280px !important;
+        width: 100% !important;
+        margin: 20px auto !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+    }
+    
+    .brilliance-visual::before {
+        content: "" !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 280px !important;
+        height: 180px !important;
+        margin: 0 auto !important;
+        background: rgba(138, 43, 226, 0.1) !important;
+        border: 1px solid rgba(138, 43, 226, 0.2) !important;
+        border-radius: 12px !important;
+        position: relative !important;
+    }
+    
+    .brilliance-visual::after {
+        content: "AI Analytics Dashboard" !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        font-size: 14px !important;
+        color: rgba(138, 43, 226, 0.8) !important;
+        font-weight: 500 !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+    }
+    
+    /* All text sections - center */
+    .section-header {
+        text-align: center !important;
+        max-width: 100% !important;
+        margin: 0 auto 40px auto !important;
+    }
+    
+    .section-title,
+    .plans-title {
+        text-align: center !important;
+        font-size: 32px !important;
+    }
+    
+    .section-description,
+    .plans-description {
+        text-align: center !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Remove problematic floating elements and cards - but keep emerging-frontiers-card */
+    .floating-elements,
+    .floating-card,
+    .apple-metrics,
+    .metric-card {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    
+    /* Allow only essential static transforms for layout */
+    .hero-visual {
+        transform: scale(0.8) !important;
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .brilliance-visual {
+        transform: scale(0.8) !important;
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    /* FINAL OVERRIDE: Make Analytics Dashboard card much wider and centered on mobile */
+    section.dashboard-power .power-visual {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    
+    section.dashboard-power .apple-glass-card.premium-dashboard {
+        max-width: calc(100vw - 40px) !important;
+        width: calc(100vw - 40px) !important;
+        margin: 0 !important;
+        position: relative !important;
+        left: auto !important;
+        transform: none !important;
+    }
+    
+    /* Make Emerging Frontiers card as wide as Analytics Dashboard */
+    .exploration-visual {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    
+    .emerging-frontiers-card {
+        max-width: calc(100vw - 40px) !important;
+        width: calc(100vw - 40px) !important;
+        margin: 0 !important;
+        position: relative !important;
+    }
+    
+    /* Move purple circle higher in Voice Technology section on mobile */
+    .voice-technology-premium::before {
+        top: 15% !important;
+    }
+    
+    /* Hide only the individual voice cards (Sarah, Marcus, etc) on mobile */
+    .voice-showcase-content {
+        display: none !important;
+    }
+    
+    /* Hide specific call handling cards on mobile - the last 4 cards */
+    .apple-call-flow .apple-call-card:nth-child(5),
+    .apple-call-flow .apple-call-card:nth-child(6),
+    .apple-call-flow .apple-call-card:nth-child(7),
+    .apple-call-flow .apple-call-card:nth-child(8) {
+        display: none !important;
+    }
+    
+    /* Move orange circle higher in call handling section on mobile */
+    .call-handling::before {
+        top: 30% !important;
+    }
+    
+    /* Move circle higher and make it bigger in Custom Intelligence Solutions section on mobile */
+    .new-section::before {
+        top: 40% !important;
+        width: 600px !important;
+        height: 600px !important;
+    }
+    
+    /* Move circle higher in Discovery & Planning section on mobile */
+    .discovery-planning::before {
+        top: 30% !important;
+    }
+    
+    /* Fix FAQ section on mobile - proper text display */
+    .faq-glass-grid {
+        gap: 8px !important;
+    }
+    
+    .faq-glass-item {
+        padding: 12px 16px !important;
+        margin-bottom: 0 !important;
+        min-height: auto !important;
+        height: auto !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        cursor: pointer !important;
+    }
+    
+    .faq-glass-item.active {
+        height: auto !important;
+    }
+    
+    .faq-question {
+        font-size: 14px !important;
+        line-height: 1.3 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-weight: 400 !important;
+        flex: 1 !important;
+        padding-right: 10px !important;
+        white-space: normal !important;
+        text-align: left !important;
+    }
+    
+    .faq-answer {
+        display: none !important;
+        height: 0 !important;
+        overflow: hidden !important;
+    }
+    
+    .faq-glass-icon {
+        width: 24px !important;
+        height: 24px !important;
+        flex-shrink: 0 !important;
+    }
+    
+    /* Move purple circle higher in FAQ section on mobile */
+    .faq-section::before {
+        top: 35% !important;
     }
 }
 
-@media (max-width: 576px) {
-    .ai-interface {
-        transform: scale(1);
+/* Phone-specific adjustments */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px !important;
+    }
+    
+    .hero-title {
+        font-size: 28px !important;
+        line-height: 1.1 !important;
+        word-spacing: normal !important;
+    }
+    
+    /* Consistent word spacing for smaller screens */
+    .hero-title .word,
+    .hero-title .accent-text {
+        margin-right: 0.2em !important;
+    }
+    
+    .hero-description {
+        font-size: 15px !important;
+        line-height: 1.4 !important;
+        max-width: 300px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: 14px !important;
+    }
+    
+    .hero-fact {
+        font-size: 13px !important;
+        line-height: 1.3 !important;
+        max-width: 260px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: 28px !important;
+    }
+    
+    .section-title,
+    .plans-title {
+        font-size: 26px !important;
+    }
+    
+    .section-description,
+    .plans-description {
+        font-size: 15px !important;
+    }
+    
+    .apple-glass-card {
+        max-width: 100% !important;
+        padding: 16px !important;
+    }
+    
+    .main-voice-card,
+    .voice-card,
+    .upload-card,
+    .files-card,
+    .plan-card,
+    .solution-card,
+    .technology-card,
+    .capability-card,
+    .faq-item {
+        max-width: 100% !important;
+        padding: 16px !important;
+    }
+    
+    .hero-buttons {
+        max-width: 100% !important;
+    }
+    
+    .cta-button {
+        padding: 14px 20px !important;
+        font-size: 15px !important;
+    }
+    
+    .contact-btn {
+        padding: 8px 16px !important;
+        font-size: 14px !important;
+        margin: 0 !important;
+    }
+    
+    .header-content {
+        height: auto !important;
+        min-height: 60px !important;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+    .container {
+        padding: 0 12px !important;
+    }
+    
+    .hero-title {
+        font-size: 24px !important;
+        line-height: 1.1 !important;
+        word-spacing: normal !important;
+    }
+    
+    /* Consistent word spacing for very small screens */
+    .hero-title .word,
+    .hero-title .accent-text {
+        margin-right: 0.15em !important;
+    }
+    
+    .hero-description {
+        font-size: 14px !important;
+        line-height: 1.4 !important;
+        max-width: 280px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .hero-fact {
+        font-size: 12px !important;
+        line-height: 1.3 !important;
+        max-width: 240px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: 24px !important;
+    }
+    
+    .section-title,
+    .plans-title {
+        font-size: 22px !important;
+    }
+    
+    .apple-glass-card {
+        padding: 12px !important;
+    }
+}
+
+/* Landscape phone adjustments */
+@media (max-height: 500px) and (orientation: landscape) and (max-width: 926px) {
+    .hero {
+        padding: 40px 0 30px !important;
+    }
+    
+    .hero-title {
+        font-size: 24px !important;
+    }
+    
+    .hero-buttons {
+        flex-direction: row !important;
+        max-width: 400px !important;
+        gap: 12px !important;
+    }
+    
+    .cta-button {
+        width: auto !important;
+        min-width: 140px !important;
     }
 }
