@@ -18,6 +18,10 @@
       {
         "source": "/plans",
         "destination": "/plans.html"
+      },
+      {
+        "source": "/ai-demo",
+        "destination": "/ai-demo.html"
       }
     ],
     "headers": [

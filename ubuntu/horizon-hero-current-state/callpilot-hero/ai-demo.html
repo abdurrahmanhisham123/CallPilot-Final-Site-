@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Demo - CallPilot AI Voice Facilitators</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/script.js" defer></script>
+    <style>
+        .demo-form-section {
+            padding-top: 180px;
+            padding-bottom: 120px;
+            background: #000000;
+            position: relative;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        .demo-form-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 3;
+        }
+        
+        .demo-form-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .demo-form-title {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
+            color: #ffffff;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        
+        .demo-form-subtitle {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .demo-form {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+                        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-label {
+            display: block;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+        
+        .form-label span {
+            color: #ff4444;
+            margin-left: 2px;
+        }
+        
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 12px 16px;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(138, 43, 226, 0.5);
+            box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.1);
+        }
+        
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .form-select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23FFFFFF' stroke-opacity='0.5' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+        
+        .form-select option {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+        
+        .form-note {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 4px;
+        }
+        
+        .submit-button {
+            width: 100%;
+            padding: 16px 32px;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            background: linear-gradient(135deg, #8a2be2 0%, #6a1fb8 100%);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 32px;
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(138, 43, 226, 0.3);
+        }
+        
+        .submit-button:active {
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            .demo-form-title {
+                font-size: 36px;
+            }
+            
+            .demo-form {
+                padding: 30px;
+            }
+            
+            .demo-form-container {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-gradient-bg"></div>
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <a href="/home" class="logo">
+                    <span class="logo-text">CallPilot</span>
+                </a>
+                
+                <!-- Navigation -->
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="/home" class="nav-link">
+                                <span class="nav-text">Home</span>
+                                <div class="nav-indicator"></div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/plans" class="nav-link">
+                                <span class="nav-text">Plans</span>
+                                <div class="nav-indicator"></div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/ai-demo" class="nav-link active">
+                                <span class="nav-text">AI Demo</span>
+                                <div class="nav-indicator"></div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <!-- User Actions -->
+                <div class="user-actions">
+                    <a href="/plans" class="contact-btn">
+                        <span>Get Started</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn">
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Demo Form Section -->
+        <section class="demo-form-section">
+            <!-- Layer 1: Purple Circle (on black background) -->
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 1200px; height: 1200px; background: radial-gradient(circle, rgba(138, 43, 226, 0.4) 0%, rgba(138, 43, 226, 0.2) 40%, transparent 70%); border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 1;"></div>
+            
+            <!-- Layer 2: Glass Effect (on top of circle) -->
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.01); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); pointer-events: none; z-index: 2;"></div>
+            
+            <div class="demo-form-container">
+                <div class="demo-form-header">
+                    <h1 class="demo-form-title">Experience AI Voice Automation</h1>
+                    <p class="demo-form-subtitle">See how CallPilot can transform your business communication. Fill out the form below to schedule your personalized demo.</p>
+                </div>
+                
+                <form class="demo-form" id="aiDemoForm">
+                    <div class="form-group">
+                        <label class="form-label">
+                            Are you actively looking to implement AI voice automation in your business?
+                            <span>*</span>
+                        </label>
+                        <select class="form-select" name="lookingToImplement" required>
+                            <option value="">Please select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                        <p class="form-note">We Don't Do WhiteLabel Partnerships</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">
+                            What's your business industry?
+                            <span>*</span>
+                        </label>
+                        <select class="form-select" name="industry" required>
+                            <option value="">Please select</option>
+                            <option value="ecommerce">E-commerce</option>
+                            <option value="saas">SaaS</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="real-estate">Real Estate</option>
+                            <option value="finance">Finance</option>
+                            <option value="education">Education</option>
+                            <option value="retail">Retail</option>
+                            <option value="hospitality">Hospitality</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">
+                            What's your company revenue? (Per Year In USD)
+                            <span>*</span>
+                        </label>
+                        <select class="form-select" name="revenue" required>
+                            <option value="">Please select</option>
+                            <option value="0-100k">$0 - $100K</option>
+                            <option value="100k-500k">$100K - $500K</option>
+                            <option value="500k-1m">$500K - $1M</option>
+                            <option value="1m-5m">$1M - $5M</option>
+                            <option value="5m-10m">$5M - $10M</option>
+                            <option value="10m+">$10M+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">
+                            What Is Your Name?
+                            <span>*</span>
+                        </label>
+                        <input type="text" class="form-input" name="name" placeholder="Steve Jobs" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">
+                            What Is Your Company Name?
+                            <span>*</span>
+                        </label>
+                        <input type="text" class="form-input" name="companyName" placeholder="Apple" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">
+                            Please Enter Your Website Link
+                            <span>*</span>
+                        </label>
+                        <input type="url" class="form-input" name="website" placeholder="apple.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">
+                            What Is Your WhatsApp Number
+                            <span>*</span>
+                        </label>
+                        <input type="tel" class="form-input" name="whatsapp" placeholder="+19492295100" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">
+                            How Did You Find Us?
+                            <span>*</span>
+                        </label>
+                        <select class="form-select" name="source" required>
+                            <option value="">Please select</option>
+                            <option value="google">Google Search</option>
+                            <option value="social-media">Social Media</option>
+                            <option value="referral">Referral</option>
+                            <option value="linkedin">LinkedIn</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Schedule AI Demo</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: #000000; padding: 80px 0 40px 0; position: relative; overflow: hidden;">
+        <!-- Layer 1: Purple Circle (on black background) -->
+        <div style="position: absolute; top: 95%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(138, 43, 226, 0.3) 0%, rgba(138, 43, 226, 0.15) 50%, transparent 100%); border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 1;"></div>
+        
+        <!-- Layer 2: Glass Effect (on top of circle) -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.01); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); pointer-events: none; z-index: 2;"></div>
+        
+        <!-- Layer 3: Content (on top of glass effect) -->
+        <div class="container" style="position: relative; z-index: 3;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px;">
+                <!-- Brand Section -->
+                <div>
+                    <div style="margin-bottom: 24px;">
+                        <span style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif; font-size: 28px; font-weight: 700; color: #ffffff; letter-spacing: -0.02em;">CallPilot</span>
+                        <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 14px; color: rgba(138, 43, 226, 0.8); font-weight: 500; margin-top: 4px;">AI Voice Intelligence</div>
+                    </div>
+                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 16px; color: rgba(255, 255, 255, 0.7); line-height: 1.5; margin: 0;">
+                        Transforming business communication with cutting-edge AI voice technology.
+                    </p>
+                </div>
+                
+                <!-- Links Section -->
+                <div>
+                    <h4 style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 16px; font-weight: 600; color: #ffffff; margin: 0 0 20px 0;">Platform</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 12px;"><a href="/home" style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: color 0.2s;">Home</a></li>
+                        <li style="margin-bottom: 12px;"><a href="/plans" style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: color 0.2s;">Plans</a></li>
+                        <li style="margin-bottom: 12px;"><a href="/ai-demo" style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: color 0.2s;">AI Demo</a></li>
+                        <li><a href="#contact" style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: color 0.2s;">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Section -->
+                <div>
+                    <h4 style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 16px; font-weight: 600; color: #ffffff; margin: 0 0 20px 0;">Get Started</h4>
+                    <p style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 15px; color: rgba(255, 255, 255, 0.7); margin: 0;">Experience the future of business communication.</p>
+                </div>
+            </div>
+            
+            <!-- Bottom Section -->
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 30px; display: flex; justify-content: space-between; align-items: center;">
+                <p style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.5); margin: 0;">&copy; 2024 CallPilot AI. All rights reserved.</p>
+                <div style="display: flex; gap: 30px;">
+                    <a href="#" style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.5); text-decoration: none; transition: color 0.2s;">Privacy</a>
+                    <a href="#" style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.5); text-decoration: none; transition: color 0.2s;">Terms</a>
+                    <a href="#" style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.5); text-decoration: none; transition: color 0.2s;">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handler
+        document.getElementById('aiDemoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to your backend
+            console.log('Form submitted with data:', data);
+            
+            // Show success message (you can customize this)
+            alert('Thank you for your interest! We will contact you shortly to schedule your AI demo.');
+            
+            // Optionally reset the form
+            this.reset();
+        });
+    </script>
+</body>
+</html>

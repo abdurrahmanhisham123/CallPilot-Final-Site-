@@ -11,7 +11,10 @@
       "Bash(firebase logout:*)",
       "Bash(npm init:*)",
       "Bash(npm install:*)",
-      "Bash(firebase deploy:*)"
+      "Bash(firebase deploy:*)",
+      "Bash(npx http-server:*)",
+      "Bash(firebase serve:*)",
+      "Bash(pkill:*)"
     ],
     "deny": []
   }
