@@ -533,6 +533,10 @@
         gap: 8px !important;
         font-size: 12px !important;
         color: rgba(255, 255, 255, 0.7) !important;
+        background: transparent !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        padding: 6px 12px !important;
+        border-radius: 12px !important;
     }
     
     .frontier-item {
@@ -543,6 +547,21 @@
         display: flex !important;
         align-items: center !important;
         gap: 12px !important;
+    }
+    
+    .frontier-icon {
+        background: rgba(138, 43, 226, 0.1) !important;
+        border: 1px solid rgba(138, 43, 226, 0.2) !important;
+        color: rgba(138, 43, 226, 0.9) !important;
+    }
+    
+    /* Remove hover animations and orange effects from Emerging Frontiers card only */
+    .emerging-frontiers-card .frontier-item:hover {
+        background: rgba(255, 255, 255, 0.03) !important;
+        border-color: rgba(255, 255, 255, 0.08) !important;
+        transform: none !important;
+        box-shadow: none !important;
+        cursor: default !important;
     }
     
     .frontier-title {
@@ -717,15 +736,37 @@
     .mobile-ai-card-container .item-title {
         font-size: 15px !important;
         font-weight: 600 !important;
+        margin-bottom: 4px !important;
     }
     
     .mobile-ai-card-container .item-subtitle {
         font-size: 13px !important;
+        color: rgba(255, 255, 255, 0.6) !important;
     }
     
-    .mobile-ai-card-container .item-value {
+    .mobile-ai-card-container .showcase-badge {
         font-size: 11px !important;
         padding: 3px 8px !important;
+        font-weight: 600 !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .mobile-ai-card-container .showcase-item {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+    
+    .mobile-ai-card-container .item-icon {
+        width: 40px !important;
+        height: 40px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: rgba(138, 43, 226, 0.1) !important;
+        border-radius: 10px !important;
+        flex-shrink: 0 !important;
     }
     
     .mobile-ai-card-container .metric-value {
@@ -736,6 +777,51 @@
     .mobile-ai-card-container .metric-label {
         font-size: 12px !important;
         font-weight: 400 !important;
+    }
+    
+    /* Fix Analytics Dashboard card layout to match AI Voice Intelligence */
+    .premium-dashboard .showcase-item {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 12px !important;
+        background: rgba(255, 255, 255, 0.03) !important;
+        border-radius: 8px !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        gap: 12px !important;
+    }
+    
+    .premium-dashboard .showcase-icon {
+        width: 40px !important;
+        height: 40px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: rgba(138, 43, 226, 0.1) !important;
+        border-radius: 10px !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .premium-dashboard .showcase-info {
+        text-align: left !important;
+        flex: 1 !important;
+    }
+    
+    .premium-dashboard .showcase-title {
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        margin-bottom: 4px !important;
+        color: #ffffff !important;
+    }
+    
+    .premium-dashboard .showcase-subtitle {
+        font-size: 13px !important;
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+    
+    .premium-dashboard .showcase-badge {
+        flex-shrink: 0 !important;
     }
     
     /* Reorder Analytics Dashboard section - text above card on mobile */
@@ -796,7 +882,7 @@
     }
     
     .glass-title {
-        font-size: 16px !important;
+        /* font-size: 16px !important; */ /* Removed to allow proper font sizes */
         line-height: 1.3 !important;
         margin-bottom: 8px !important;
     }
@@ -816,28 +902,32 @@
     }
     
     .showcase-item {
-        padding: 8px !important;
-        flex-direction: column !important;
-        text-align: center !important;
-        gap: 4px !important;
+        padding: 12px !important;
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        background: rgba(255, 255, 255, 0.03) !important;
+        border-radius: 8px !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
     }
     
     .item-info {
-        text-align: center !important;
+        text-align: left !important;
         margin: 0 !important;
+        flex: 1 !important;
     }
     
     .item-title {
-        font-size: 13px !important;
+        /* font-size: 13px !important; */ /* Removed to allow proper font sizes */
         margin-bottom: 2px !important;
     }
     
     .item-subtitle {
-        font-size: 11px !important;
+        /* font-size: 11px !important; */ /* Removed to allow proper font sizes */
     }
     
     .item-value {
-        font-size: 10px !important;
+        /* font-size: 10px !important; */ /* Removed to allow proper font sizes */
         padding: 2px 6px !important;
     }
     
@@ -852,12 +942,12 @@
     }
     
     .metric-value {
-        font-size: 14px !important;
+        /* font-size: 14px !important; */ /* Removed to allow proper font sizes */
         margin-bottom: 2px !important;
     }
     
     .metric-label {
-        font-size: 9px !important;
+        /* font-size: 9px !important; */ /* Removed to allow proper font sizes */
     }
     
     /* Voice carousel - center everything */
@@ -1099,6 +1189,16 @@
         width: calc(100vw - 40px) !important;
         margin: 0 !important;
         position: relative !important;
+    }
+    
+    /* Make purple circle bigger under Emerging Frontiers card on mobile */
+    .exploration-visual > div:first-child {
+        width: 800px !important;
+        height: 800px !important;
+        top: -200px !important;
+        left: -200px !important;
+        background: radial-gradient(circle, rgba(138, 43, 226, 0.6) 0%, rgba(138, 43, 226, 0.25) 50%, transparent 100%) !important;
+        filter: blur(60px) !important;
     }
     
     /* Move purple circle higher in Voice Technology section on mobile */
