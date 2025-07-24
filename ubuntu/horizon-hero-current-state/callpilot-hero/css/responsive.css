@@ -453,7 +453,7 @@
     
     /* Exploration section - Better mobile spacing */
     .exploration-section {
-        padding: 60px 0 !important;
+        padding: 0px 0 60px 0 !important;
         overflow: visible !important;
         width: 100% !important;
         max-width: 100% !important;
@@ -461,7 +461,7 @@
     
     .exploration-text {
         order: -1 !important;
-        margin-bottom: 60px !important;
+        margin-bottom: 20px !important;
         padding: 0 20px !important;
         text-align: center !important;
     }
@@ -483,6 +483,11 @@
     }
     
     .exploration-description {
+        display: none !important;
+    }
+    
+    .exploration-description-mobile {
+        display: block !important;
         font-size: 16px !important;
         line-height: 1.5 !important;
         text-align: center !important;
@@ -687,7 +692,7 @@
         position: relative !important;
         width: 100% !important;
         padding: 0 !important;
-        margin-top: 40px !important;
+        margin-top: -20px !important;
     }
 
     /* Mobile orange circle background - much bigger */
@@ -779,6 +784,11 @@
         font-weight: 400 !important;
     }
     
+    .mobile-ai-card-container .metric-item {
+        background: transparent !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+    
     /* Fix Analytics Dashboard card layout to match AI Voice Intelligence */
     .premium-dashboard .showcase-item {
         display: flex !important;
@@ -846,7 +856,7 @@
     
     .dashboard-power .power-visual {
         order: 1 !important;
-        margin-top: 0 !important;
+        margin-top: -40px !important;
         padding: 0 20px !important;
     }
     
@@ -1049,6 +1059,11 @@
     }
     
     .brilliance-description {
+        display: none !important;
+    }
+    
+    .brilliance-description-mobile {
+        display: block !important;
         font-size: 16px !important;
         line-height: 1.5 !important;
         text-align: center !important;
@@ -1059,11 +1074,7 @@
     }
     
     .brilliance-fact {
-        text-align: center !important;
-        margin: 16px auto !important;
-        max-width: 280px !important;
-        font-size: 13px !important;
-        padding: 0 16px !important;
+        display: none !important;
     }
     
     .brilliance-visual {
@@ -1215,7 +1226,25 @@
     
     /* Move purple circle higher in Voice Technology section on mobile */
     .voice-technology-premium::before {
-        top: 15% !important;
+        top: 25% !important;
+        left: 30% !important;
+        filter: blur(60px) !important;
+    }
+    
+    /* Voice Technology section - mobile subtitle */
+    .voice-tech-description {
+        display: none !important;
+    }
+    
+    .voice-tech-description-mobile {
+        display: block !important;
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        text-align: center !important;
+        margin-bottom: 32px !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        color: rgba(255, 255, 255, 0.8) !important;
     }
     
     /* Hide only the individual voice cards (Sarah, Marcus, etc) on mobile */
