@@ -14,7 +14,9 @@
       "Bash(firebase deploy:*)",
       "Bash(npx http-server:*)",
       "Bash(firebase serve:*)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(cd \"/Users/abdurrahmanhisham/Documents/Coding/home copy 3/ubuntu/horizon-hero-current-state/callpilot-hero\")",
+      "Bash(ls -la index.html)"
     ],
     "deny": []
   }
